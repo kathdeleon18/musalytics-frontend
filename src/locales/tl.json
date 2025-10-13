@@ -1,0 +1,952 @@
+{
+  "common": {
+    "loading": "Naglo-load...",
+    "error": "May Nangyaring Mali",
+    "tryAgain": "Subukang Muli",
+    "cancel": "Kanselahin",
+    "save": "I-save",
+    "delete": "Burahin",
+    "edit": "I-edit",
+    "viewAll": "Tingnan Lahat",
+    "close": "Isara",
+    "download": "I-download",
+    "details": "Mga Detalye",
+    "actions": "Mga Aksyon",
+    "of": "ng",
+    "next": "Susunod",
+    "prev": "Nakaraan",
+    "ok": "OK",
+    "submit": "Ipasa",
+    "na": "N/A",
+    "search": "Maghanap",
+    "filters": "Mga Filter",
+    "clearAll": "I-clear lahat",
+    "clearAllFilters": "I-clear lahat ng filter",
+    "less": "Kaunti",
+    "more": "Marami"
+  },
+  "dashboard": {
+    "header": {
+      "welcome": "Maligayang pagdating, {firstName}",
+      "overview": "Narito ang pangkalahatang-ideya ng kalusugan ng iyong mga saging"
+    },
+    "quickStats": {
+      "title": "Mabilisang Impormasyon",
+      "healthyPlants": "Malusog na Halaman",
+      "atRiskPlants": "Nanganganib na Halaman",
+      "infectedPlants": "May Sakit na Halaman",
+      "treatedPlants": "Nalunasan na Halaman"
+    },
+    "loading": "Nilo-load ang iyong dashboard...",
+    "errorTitle": "May Mali sa Pag-load ng Dashboard",
+    "cta": {
+      "title": "I-scan ang Iyong mga Halamang Saging",
+      "description": "Mag-upload ng mga larawan para matukoy ang mga isyu sa halamang saging.",
+      "button": "Magsimula ng Bagong Scan",
+      "userNotFound": "Hindi nahanap ang profile ng user. Mangyaring makipag-ugnayan sa ."
+    },
+    "stats": {
+      "accuracy": "Katumpakan ng Pagtukoy",
+      "today": "Ngayong Araw",
+      "confidence": "Kumpiyansa ng Modelo",
+      "plantationHealth": "Kalusugan ng Plantasyon",
+      "attention": "Nangangailangan ng Pansin",
+      "healthy": "Malusog",
+      "atRisk": "Nanganganib",
+      "weeklyStats": "Lingguhang Istatistika",
+      "thisWeek": "Ngayong Linggo",
+      "scansCompleted": "Mga Nakumpletong Scan",
+      "issuesDetected": "Mga Natukoy na Problema",
+      "totalScans": "Kabuuang mga Scan"
+    },
+    "recentDetections": {
+      "title": "Mga Huling Natukoy",
+      "highRisk": "Mataas na Panganib",
+      "mediumRisk": "Katamtamang Panganib",
+      "lowRisk": "Mababang Panganib"
+    },
+    "weather": {
+      "title": "Alerto sa Panahon",
+      "region": "Rehiyon ng MIMAROPA",
+      "forecast": "Inaasahan ang Malakas na Pag-ulan",
+      "duration": "Susunod na 3 araw",
+      "recommendation": "Mataas na panganib ng pagkalat ng Black Sigatoka dahil sa mataas na halumigmig. Isaalang-alang ang pag-apply ng pamatay-fungus.",
+      "button": "Tingnan ang Detalyadong Ulat Panahon"
+    },
+    "actions": {
+      "title": "Mga Inirerekomendang Aksyon",
+      "action1": "Mag-apply ng fungicide sa Field A (Black Sigatoka)",
+      "action2": "Mag-set up ng mga bitag para sa weevil sa Field B",
+      "action3": "Mag-iskedyul ng follow-up scan para sa Field C",
+      "action4": "Ihanda ang mga drainage system para sa inaasahang pag-ulan",
+      "highSeverityTitle": "Mataas na Severity ng {disease}",
+      "highPriority": "Mataas na Priyoridad",
+      "mediumPriority": "Katamtaman na Priyoridad",
+      "lowPriority": "Mababa na Priyoridad",
+      "highSeverityDesc": "Nakakita ng {count} mataas na antas ng pagkakasakit ng {disease} sa nakaraang linggo",
+      "hotspotTitle": "May natukoy na hotspot sa {area}",
+      "hotspotDesc": "Ang {area} ay may {count} impeksiyon, na ginagawa itong isang high-risk na lugar",
+      "trendingTitle": "{disease} ay trending sa iyong Plantasyon",
+      "trendingDesc": "Ang Kaso ng {disease} ay Tumaas ng {trend}% ngayon Linggo",
+      "timeframe": "Panahon",
+      "takeAction": "Kumilos",
+      "improveHealthTitle": "Pagbutihin ang Kalusugan ng Plantasyon",
+      "improveHealthDesc": "Ang health score ng iyong plantasyon ay mas mababa sa tama. Isaalang-alang ang pagpapatupad ng mas mabuting mga gawain.",
+      "bestPracticesTitle": "Ipatupad ang Mga Pinakamainam na Gawain",
+      "bestPracticesDesc": "Sundin ang mga napatunayang pinakamainam na gawain sa pamamahala ng plantasyon upang maiwasan ang pagkalat ng sakit.",
+      "noActions": "Walang inirerekomendang aksyon sa kasalukuyan",
+      "timeframes": {
+        "immediate": "Agad",
+        "urgent": "Sa loob ng 48 oras",
+        "soon": "Ngayong linggo",
+        "week": "Ngayong linggo",
+        "month": "Ngayong buwan",
+        "ongoing": "Tuloy-tuloy"
+      }  
+    },
+    "analytics": {
+      "title": "Analytics ng Pagtukoy",
+      "week": "Linggo",
+      "month": "Buwan",
+      "year": "Taon",
+      "distributionTitle": "Distribusyon ng Sakit/Peste",
+      "statsTitle": "Istatistika ng Pagtukoy"
+    }
+  },
+  "profile": {
+    "header": {
+      "title": "Aking Profile",
+      "backTooltip": "Bumalik sa Dashboard"
+    },
+    "loading": "Nilo-load ang profile...",
+    "status": {
+      "active": "Aktibong Account"
+    },
+    "userCard": {
+      "roleProfessional": "Propesyonal sa Agrikultura",
+      "roleFarmer": "Magsasaka ng Saging",
+      "about": "Tungkol sa",
+      "noBio": "Walang bio na ibinigay. I-click ang icon para magdagdag.",
+      "editBioPlaceholder": "Sumulat ng maikling bio...",
+      "noLocation": "Walang lokasyong ibinigay",
+      "noPhone": "Walang teleponong ibinigay",
+      "joined": "Sumali noong {date}",
+      "verification": "Pag-verify: {method}"
+    },
+    "stats": {
+      "title": "Istatistika ng Aktibidad",
+      "scans": "Mga Scan",
+      "reports": "Mga Ulat",
+      "farms": "Mga Bukid",
+      "dayStreak": "Araw na Sunud-sunod"
+    },
+    "account": {
+      "title": "Mga Setting ng Account",
+      "fullName": "Buong Pangalan",
+      "firstName": "Unang Pangalan",
+      "lastName": "Apelyido",
+      "email": "Email Address",
+      "emailImmutable": "Hindi maaaring baguhin ang email.",
+      "phone": "Numero ng Telepono",
+      "location": "Lokasyon",
+      "street": "Tirahan",
+      "save": "I-save ang mga Pagbabago",
+      "success": "Matagumpay na na-update ang profile!",
+      "error": "Nabigong i-update ang profile. Pakisubukang muli."
+    },
+    "password": {
+      "title": "Mga Setting ng Password",
+      "current": "Kasalukuyang Password",
+      "new": "Bagong Password",
+      "confirm": "Kumpirmahin ang Bagong Password",
+      "save": "I-update ang Password",
+      "success": "Matagumpay na na-update ang password!",
+      "errorMatch": "Hindi magkatugma ang mga bagong password.",
+      "errorLength": "Ang bagong password ay dapat may hindi bababa sa 6 na karakter.",
+      "errorUpdate": "Nabigong i-update ang password. Suriin ang iyong kasalukuyang password."
+    },
+    "notifications": {
+      "title": "Mga Setting ng Abiso",
+      "email": "Mga Abiso sa Email",
+      "sms": "Mga Abiso sa SMS",
+      "weather": "Mga Alerto sa Panahon",
+      "disease": "Mga Alerto sa Pagsiklab ng Sakit",
+      "save": "I-save ang mga Kagustuhan",
+      "success": "Nai-save ang mga kagustuhan sa abiso!",
+      "error": "Nabigong i-save ang mga kagustuhan. Pakisubukang muli."
+    }
+  },
+  "reports": {
+    "title": "Aking mga Naka-save na Ulat",
+    "description": "Tingnan at pamahalaan ang iyong mga naka-save na ulat ng sakit ng saging",
+    "export": "I-export",
+    "newScan": "Bagong Scan",
+    "viewScanHistory": "Tingnan ang Kasaysayan ng Scan",
+    "errorLoading": "Error I-Load Ang mga Ulat",
+    "stats": {
+      "total": "Kabuuang Ulat",
+      "highSeverity": "Mataas na Severity",
+      "mediumSeverity": "Katamtamang Severity",
+      "lowSeverity": "Mababang Severity",
+      "tagged": "Mga Ulat na may Tag",
+      "withNotes": "May mga Tala"
+    },
+    "insights": {
+      "title": "Mga Insight sa Sakit",
+      "show": "Ipakita ang mga Insight",
+      "hide": "Itago ang mga Insight",
+      "distribution": "Distribusyon ng Sakit",
+      "severityDistribution": "Distribusyon ng Severity",
+      "overTime": "Mga Ulat sa Paglipas ng Panahon",
+      "tagDistribution": "Distribusyon ng Tag",
+      "keyInsights": "Mga Mahahalagang Insight",
+      "noDiseaseData": "Walang available na data ng sakit",
+      "noTimeData": "Walang available na data ng oras",
+      "noTagsData": "Walang available na data ng mga tag",
+      "reportsLabel": "{count} ulat | {count} na mga ulat",
+      "commonDisease": "Pinakakaraniwang sakit",
+      "reports": "Ulat",
+      "highSeverityWarning": "May ulat na may mataas na severity na nangangailangan ng agarang pansin",
+      "commonTag": "Pinakagamit na tag",
+      "trendIncrease": "Tumaas ang mga ulat ng {percent} noong {last} kumpara sa {prev}",
+      "trendDecrease": "Bumaba ang mga ulat ng {percent} noong {last} kumpara sa {prev}",
+      "trendStable": "Nanatiling pareho ang bilang ng ulat noong {last} kumpara sa {prev}"
+    },
+    "empty": {
+      "title": "Walang Nahanap na Naka-save na Ulat",
+      "description": "Wala ka pang nai-save na anumang ulat. Kapag nakakita ka ng mahalagang resulta ng scan, i-save ang mga ito bilang mga ulat para sa sanggunian sa hinaharap."
+    },
+    "filters": {
+      "searchPlaceholder": "Maghanap ng mga ulat...",
+      "cardView": "Tingin-Kard",
+      "tableView": "Tingin-Talaan",
+      "active": "Mga aktibong filter:",
+      "farmArea": {
+        "label": "Lahat ng Bukid/Lugar"
+      },
+      "area": {
+        "allArea": "Lahat ng Bukid/Lugar",
+        "mainPlantation": "Pangunahing Plantasyon",
+        "eastField": "Silangang Plantasyon",
+        "westField" : "Kanlurang Plantasyon",
+        "southSection": "Timog na Plantasyon",
+        "northSection" : "Hilagang Plantasyon"
+      },
+      "date": {
+        "label": "Lahat ng Oras",
+        "today": "Ngayong Araw",
+        "week": "Ngayong Linggo",
+        "month": "Ngayong Buwan",
+        "year": "Ngayong Taon"
+      },
+      "disease": {
+        "label": "Lahat ng Sakit",
+        "panama_disease": "Panama Disease",
+        "black_sigatoka": "Black Sigatoka",
+        "yellow_sigatoka": "Yellow Sigatoka",
+        "banana_bunchy_top": "Banana Bunchy Top",
+        "healthy": "Malusog"
+      },
+      "severity": {
+        "label": "Lahat ng Severity",
+        "high": "Mataas",
+        "medium": "Katamtaman",
+        "low": "Mababa"
+      },
+      "tag": {
+        "label": "Lahat ng Tag",
+        "urgent": "Kagyat",
+        "followUp": "Follow-up",
+        "treated": "Nagamot na",
+        "forExpert": "Para sa Dalubhasa",
+        "research": "Pananaliksik"
+      }
+    },
+    "noResults": {
+      "title": "Walang katugmang ulat na nahanap",
+      "description": "Subukang ayusin ang iyong mga filter o query sa paghahanap upang mahanap ang iyong hinahanap."
+    },
+    "card": {
+      "notesLabel": "Mga Tala:",
+      "noNotes": "Walang karagdagang tala",
+      "viewReport": "Tingnan ang Buong Ulat",
+      "deleteReport": "Burahin ang ulat"
+    },
+    "table": {
+      "image": "Larawan",
+      "disease": "Sakit",
+      "date": "Petsa",
+      "severity": "Severity",
+      "confidence": "Kumpiyansa",
+      "tags": "Mga Tag",
+      "action": "Aksyon",
+      "status": "Katayuan",
+      "noTags": "Walang mga tag",
+      "noStatus": "Walang katayuan"
+    },
+    "deleteModal": {
+      "title": "Burahin ang Ulat",
+      "confirm": "Sigurado ka bang gusto mong burahin ang ulat na ito? Ang aksyon na ito ay hindi na maaaring bawiin."
+    },
+    "successModal": {
+      "deleteSuccessTitle": "Matagumpay na Natanggal",
+      "deleteSuccessMessage": "Matagumpay na natanggal ang ulat mula sa iyong mga tala."
+    },
+
+    "detailsModal": {
+      "title": "Mga Detalye ng Ulat",
+      "print": "I-print ang Ulat",
+      "loading": "Nilo-load ang mga detalye ng ulat...",
+      "infoTitle": "Impormasyon ng Ulat",
+      "reportId": "Report ID:",
+      "created": "Nilikha:",
+      "scanDate": "Petsa ng Scan:",
+      "location": "Lokasyon:",
+      "severity": "Kalubhaan",
+      "confidence": "Kumpiyansa",
+      "notesTitle": "Mga Tala",
+      "notesPlaceholder": "Idagdag ang iyong mga obserbasyon o tala tungkol sa ulat na ito...",
+      "noNotes": "Walang mga talang idinagdag sa ulat na ito.",
+      "tagsTitle": "Mga Tag",
+      "noTags": "Walang mga tag na idinagdag sa ulat na ito.",
+      "statusTitle": "Katayuan",
+      "noStatus": "Walang katayuang itinakda para sa ulat na ito.",
+      "actionTitle": "Isinagawang Aksyon",
+      "actionPlaceholder": "Ilarawan kung anong aksyon ang iyong ginawa upang matugunan ang isyung ito...",
+      "noAction": "Walang aksyon na naitala para sa ulat na ito.",
+      "confidenceTitle": "Antas ng Kumpiyansa",
+      "tabs": {
+        "overview": "Pangkalahatang-ideya",
+        "symptoms": "Mga Sintomas",
+        "treatment": "Paggamot",
+        "prevention": "Pag-iwas"
+      },
+      "diseaseInfo": {
+        "noDescription": "Walang available na paglalarawan.",
+        "scientificName": "Pangalang Siyentipiko:",
+        "category": "Kategorya:",
+        "symptomsTitle": "Mga Sintomas",
+        "noSymptoms": "Wala pang impormasyon tungkol sa mga sintomas para sa sakit na ito.",
+        "updatesSoon": "Bumalik muli para sa mga update.",
+        "affectedParts": "Mga Apektadong Bahagi:",
+        "treatmentTitle": "Mga Rekomendasyon sa Paggamot",
+        "noTreatment": "Wala pang impormasyon sa paggamot para sa sakit na ito.",
+        "preventionTitle": "Mga Tip sa Pag-iwas",
+        "noPrevention": "Wala pang impormasyon sa pag-iwas para sa sakit na ito."
+      },
+      "mapTitle": "Lokasyon",
+      "exportPDF": "I-export sa PDF",
+      "share": "Ibahagi"
+    }
+  },
+  "scan": {
+    "scanAndDetect": "I-scan at Tukuyin",
+    "uploadInstructions": "Mag-upload ng mga larawan para matukoy ang mga problema sa saging",
+    "detectingLocation": "Tinutukoy ang lokasyon...",
+    "detectedArea": "Natukoy na Lugar:",
+    "locationNotDetected": "Hindi natukoy ang lokasyon, mag-scan o kumuha ng larawan para matukoy",
+    "dismiss": "Isara",
+    "notConnected": "Hindi konektado sa analysis server. Maaaring limitado ang ilang feature.",
+    "reconnect": "Kumonekta Muli",
+    "uploadForAnalysis": "Mag-upload ng mga Larawan para sa Pagsusuri",
+    "uploadImages": "Mag-upload ng Larawan",
+    "useCamera": "Gamitin ang Camera",
+    "dragAndDrop": "I-drag at I-drop ang mga Larawan Dito",
+    "uploadTips": "Mag-upload ng malinaw na larawan ng dahon, puno, o bunga ng saging para sa pinakamagandang resulta. Mga suportadong format: JPG, PNG.",
+    "selectImages": "Pumili ng mga Larawan",
+    "imageConstraints": "Hanggang 5 larawan lang, 10MB bawat isa",
+    "takeAPicture": "Kumuha ng Larawan",
+    "requestingPermission": "Humihingi ng Pahintulot sa Camera",
+    "allowAccess": "Paki-payagan ang access kapag tinanong ng iyong browser",
+    "permissionDenied": "Hindi Pinayagan ang Paggamit ng Camera",
+    "allowAccessSettings": "Kailangan mong payagan ang camera sa settings ng iyong browser",
+    "howToEnable": "Paano payagan ang camera:",
+    "howToStep1": "I-click ang icon ng camera o lock sa address bar ng browser",
+    "howToStep2": "Piliin ang \"Allow\" para sa camera",
+    "howToStep3": "I-refresh ang page at subukang muli",
+    "cameraTip": "Gamitin ang camera ng iyong device para kumuha ng malinaw na larawan ng saging.",
+    "startCamera": "Simulan ang Camera",
+    "retake": "Ulitin",
+    "useThisImage": "Gamitin ang Larawang Ito",
+    "selectedImages": "Mga Napiling Larawan",
+    "startAnalysis": "Simulan ang Pagsusuri",
+    "analyzingImages": "Sinusuri ang mga Larawan",
+    "analyzingDesc": "Pinoproseso ng aming AI model ang iyong mga larawan upang matukoy ang mga sakit at peste ng saging. Maaaring tumagal ito nang ilang sandali...",
+    "analysisResults": "Resulta ng Pagsusuri",
+    "startNewScan": "Magsimula ng Bagong Scan",
+    "confidence": "Kumpiyansa",
+    "severity": "Lala",
+    "treatment": "Lunas",
+    "symptoms": "Sintomas",
+    "prevention": "Pag-iwas",
+    "info": "Impormasyon",
+    "requestInformation": "Humihingi ng Impormasyon",
+    "translating": "Nagsasalin...",
+    "treatmentRecommendations": "Mga Rekomendasyon sa Paggamot",
+    "noTreatmentInfo": "Wala pang magagamit na impormasyon sa paggamot para sa sakit na ito.",
+    "noSymptomsInfo": "Wala pang magagamit na impormasyon sa sintomas para sa sakit na ito.",
+    "preventionTips": "Mga Paraan ng Pag-iwas",
+    "noPreventionInfo": "Wala pang magagamit na impormasyon sa pag-iwas para sa sakit na ito.",
+    "additionalInformation": "Karagdagang Impormasyon",
+    "causes": "Mga Sanhi:",
+    "additionalDetails": "Mga Karagdagang Detalye:",
+    "noAdditionalInfo": "Wala pang karagdagang impormasyon na magagamit para sa sakit na ito.",
+    "saveToReports": "I-save sa mga Ulat",
+    "saving": "Nagse-save...",
+    "recentScans": "Mga Huling Scan",
+    "noRecentScans": "Walang nakitang mga huling scan",
+    "noRecentScansDesc": "Mag-upload at suriin ang mga larawan upang makita ang iyong kasaysayan ng pag-scan",
+    "image": "Larawan",
+    "detection": "Natukoy",
+    "date": "Petsa",
+    "viewDetails": "Tingnan ang Detalye",
+    "downloadReport": "I-download ang Ulat",
+    "connected": "Konektado",
+    "disconnected": "Hindi Konektado",
+    "requestInfoTitle": "Humiling ng Impormasyon ng Sakit",
+    "requestInfoDesc": "Ipapadala ang iyong hiling sa aming mga propesyonal sa agrikultura. Sasaliksikin nila at idaragdag ang impormasyon tungkol sa sakit na ito sa aming database.",
+    "messageOptional": "Mensahe (Opsyonal)",
+    "requestPlaceholder": "Magdagdag ng anumang tiyak na mga katanungan o detalye tungkol sa nais mong malaman...",
+    "notifyMe": "Abisuhan ako kapag naging available na ang impormasyon",
+    "submitRequest": "Ipadala ang Hiling",
+    "submitting": "Ipinapadala...",
+    "reportSavedSuccess": "Matagumpay na Nai-save ang Ulat",
+    "saveFailed": "Nabigo ang Pag-save",
+    "progressStep1": "Inihahanda ang mga imahe...",
+    "progressStep2": "Pinapatakbo ang detection model...",
+    "progressStep3": "Sinusuri ang mga resulta...",
+    "progressStep4": "Tinartapos ang ulat...",
+    "successModal": {
+      "title": "Matagumpay na Nai-save ang Ulat",
+      "message": "Ang iyong pagsusuri ay naidagdag na sa 'Aking Mga Ulat'. Maaari mo nang subaybayan ang status nito at magdagdag ng mga tala.",
+      "viewReportsButton": "Tingnan ang Lahat ng Ulat"
+    },
+    "requestModal": {
+      "title": "Humiling ng Impormasyon sa Sakit",
+      "description": "Ang iyong hiling ay ipapadala sa aming mga propesyonal sa agrikultura. Sasaliksikin nila at idaragdag ang impormasyon tungkol sa sakit na ito sa aming database.",
+      "messageLabel": "Mensahe (Opsyonal)",
+      "messagePlaceholder": "Magdagdag ng anumang tiyak na tanong o detalye tungkol sa nais mong malaman...",
+      "notifyLabel": "Abisuhan ako kapag available na ang impormasyon",
+      "submitButton": "Ipadala ang Hiling",
+      "submittingButton": "Nagpapadala..."
+    }
+    
+  },
+  "scanHistory": {
+    "scanHistoryTitle": "Nakaraan na mga Scan",
+    "scanHistoryDesc": "Tingnan at pamahalaan ang iyong mga nakaraang scan ng sakit ng saging",
+    "totalScans": "Kabuuang mga Scan",
+    "highSeverity": "Mataas ang Lala",
+    "mediumSeverity": "Katamtaman ang Lala",
+    "healthyPlants": "Malusog na Halaman",
+    "errorTitle": "May Mali sa Pag-load ng Kasaysayan",
+    "emptyTitle": "Walang Nakitang Kasaysayan ng Scan",
+    "emptyDesc": "Wala ka pang nagagawang pag-scan ng sakit sa saging. Magsimula sa pag-scan ng iyong mga halaman upang matukoy ang mga sakit at subaybayan ang kanilang kalusugan.",
+    "scanNow": "I-scan Ngayon",
+    "viewDetails": "Tingnan ang Detalye",
+    "searchPlaceholder": "Maghanap ng mga scan...",
+    "dateAll": "Lahat ng Oras",
+    "dateToday": "Ngayong Araw",
+    "dateWeek": "Linggong Ito",
+    "dateMonth": "Buwang Ito",
+    "dateYear": "Taong Ito",
+    "diseaseAll": "Lahat ng Sakit",
+    "diseasePanama": "Sakit na Panama",
+    "diseaseBlackSigatoka": "Itim na Sigatoka",
+    "diseaseYellowSigatoka": "Dilaw na Sigatoka",
+    "diseaseBunchyTop": "Banana Bunchy Top",
+    "diseaseHealthy": "Malusog",
+    "severityAll": "Lahat ng Lala",
+    "severityHigh": "Mataas",
+    "severityMedium": "Katamtaman",
+    "severityLow": "Mababa",
+    "sortNewest": "Pinakabago",
+    "sortOldest": "Pinakaluma",
+    "sortConfidenceHigh": "Pinakamataas na Kumpiyansa",
+    "sortConfidenceLow": "Pinakamababang Kumpiyansa",
+    "activeFilters": "Mga aktibong filter:",
+    "noResultsTitle": "Walang nakitang tugmang scan",
+    "noResultsDesc": "Subukang baguhin ang iyong mga filter o paghahanap.",
+    "tableImage": "Larawan",
+    "tableDisease": "Sakit",
+    "tableDate": "Petsa",
+    "tableSeverity": "Lala",
+    "tableConfidence": "Kumpiyansa",
+    "tableActions": "Mga Aksyon",
+    "deleteModalTitle": "Burahin ang Scan",
+    "deleteModalDesc": "Sigurado ka bang gusto mong burahin ang scan na ito? Hindi na ito maibabalik.",
+    "scanDetailsTitle": "Mga Detalye ng Scan",
+    "scanInfoTitle": "Impormasyon ng Scan",
+    "analysisId": "Analysis ID:",
+    "dateLabel": "Petsa:",
+    "locationLabel": "Lokasyon:",
+    "captureMethodLabel": "Paraan ng Pagkuha:",
+    "deviceLabel": "Device:",
+    "severityLabel": "Lala:",
+    "confidenceLabel": "Antas ng Kumpiyansa",
+    "confidenceLow": "Mababa",
+    "confidenceMedium": "Katamtaman",
+    "confidenceHigh": "Mataas",
+    "tabOverview": "Pangkalahatan",
+    "tabSymptoms": "Sintomas",
+    "tabTreatment": "Lunas",
+    "tabPrevention": "Pag-iwas",
+    "loadingScanDetails":"Niloload ang mga Detalye ng Scan",
+    "noDescription": "Walang deskripsyon.",
+    "scientificName": "Pang-agham na Pangalan:",
+    "category": "Kategorya:",
+    "noSymptomsInfo": "Wala pang impormasyon sa sintomas.",
+    "treatmentRecommendations": "Mga Rekomendasyon sa Paggamot",
+    "noTreatmentInfo": "Wala pang impormasyon sa paggamot.",
+    "preventionTips": "Mga Paraan ng Pag-iwas",
+    "noPreventionInfo": "Wala pang impormasyon sa pag-iwas.",
+    "saveToReport": "I-save sa Ulat",
+    "share": "Ibahagi",
+    "reportSavedSuccessTitle": "Matagumpay na Nai-save ang Ulat",
+    "reportSavedSuccessDesc": "Makikita mo ang lahat ng iyong ulat sa seksyon ng Mga Ulat.",
+    "saveToReportTitle": "I-save sa mga Ulat",
+    "saveToReportDesc": "Idagdag ang scan na ito sa iyong koleksyon ng mga ulat.",
+    "notesOptional": "Mga Tala (Opsyonal)",
+    "notesPlaceholder": "Magdagdag ng anumang obserbasyon o tala tungkol sa scan na ito...",
+    "tagsOptional": "Mga Tag (Opsyonal)",
+    "saveReportButton": "I-save ang Ulat",
+    "saving": "Sine-save..."
+  },
+  "tags": {
+    "label": "Mga Tag (Opsyonal)",
+    "urgent": "Agad-agad",
+    "followUp": "Sundan",
+    "treated": "Nagamot",
+    "forExpert": "Para sa Eksperto",
+    "research": "Pananaliksik"
+  },
+  "tasks": {
+    "header": {
+      "title": "Pangkalahatang-ideya ng Gawain",
+      "description": "Tingnan at pamahalaan ang iyong mga gawain nang mahusay."
+    },
+    "views": {
+      "week": "Linggo",
+      "day": "Araw"
+    },
+    "stats": {
+      "total": "Kabuuang Gawain",
+      "completed": "Nakumpleto",
+      "pending": "Nakahabin",
+      "overdue": "Lampas na sa Takdang Araw"
+    },
+    "errorState": {
+      "errorLoadingTasks": "Error sa paglo-load ng mga Gawain"
+    },
+    "filters": {
+      "searchPlaceholder": "Maghanap ng mga gawain...",
+      "status": {
+        "all": "Lahat ng Katayuan",
+        "pending": "Nakahabin",
+        "completed": "Nakumpleto",
+        "overdue": "Lampas na"
+      },
+      "priority": {
+        "all": "Lahat ng Priyoridad",
+        "high": "Mataas",
+        "medium": "Katamtaman",
+        "low": "Mababa"
+      },
+      "dueDate": {
+        "all": "Lahat ng Oras",
+        "today": "Ngayong Araw",
+        "week": "Ngayong Linggo",
+        "month": "Ngayong Buwan"
+      },
+      "sort": {
+        "dueAsc": "Takdang Araw (Pinakamaaga)",
+        "dueDesc": "Takdang Araw (Pinakahuli)",
+        "priorityDesc": "Priyoridad (Mataas-Mababa)",
+        "priorityAsc": "Priyoridad (Mababa-Mataas)",
+        "createdDesc": "Pinakabago",
+        "createdAsc": "Pinakaluma"
+      },
+      "active": "Mga aktibong filter:"
+    },
+    "searchResults": "Mga Resulta para sa \"{query}\"",
+    "dailyListTitle": "Mga Gawain para sa {date}",
+    "noTasksForDay": "Walang gawain para sa {date}",
+    "addTaskForToday": "Magdagdag ng Gawain para Ngayon",
+    "noTasksFound": "Walang nakitang gawain",
+    "noTasksMessage": "Subukang isaayos ang iyong query sa paghahanap o mga filter.",
+    "addNewTasksMessage": "Magdagdag ng bagong gawain o pumili ng ibang araw.",
+    "quickAdd": {
+      "title": "Magdagdag ng Gawain",
+      "taskTitle": "Pamagat ng gawain",
+      "dueDate": "Takdang Araw",
+      "priority": "Priyoridad",
+      "button": "Idagdag ang mga Detalye",
+      "low": "Mababa",
+      "medium": "Katamtaman",
+      "high": "Mataas"
+    },
+    "categories": {
+      "title": "Mga Kategorya ng Gawain"
+    },
+    "monthlyOverview": {
+      "title": "Mga Gawain para sa {month}",
+      "empty": "Walang nakaiskedyul na gawain para sa buwang ito."
+    },
+    "modal": {
+      "addTitle": "Magdagdag ng Bagong Gawain",
+      "editTitle": "I-edit ang Gawain",
+      "detailsTitle": "Mga Detalye ng Gawain",
+      "addDesc": "Punan ang mga detalye para gumawa ng bagong gawain.",
+      "editDesc": "I-update ang mga detalye para sa gawaing ito.",
+      "labels": {
+        "title": "Pamagat",
+        "description": "Deskripsyon (Opsyonal)",
+        "dueDate": "Takdang Araw",
+        "startTime": "Oras ng Simula (Opsyonal)",
+        "endTime": "Oras ng Pagtatapos (Opsyonal)",
+        "notificationTime": "Oras ng Abiso (Opsyonal)",
+        "priority": "Priyoridad",
+        "status": "Katayuan"
+      },
+      "placeholders": {
+        "title": "hal., Tapusin ang ulat ng proyekto",
+        "description": "Magdagdag ng iba pang detalye tungkol sa gawain..."
+      },
+      "buttons": {
+        "saveChanges": "I-save ang mga Pagbabago",
+        "addTask": "Idagdag ang Gawain",
+        "markPending": "Markahang Nakahabin",
+        "markComplete": "Markahang Kumpleto"
+      }
+    },
+    "deleteModal": {
+      "title": "Burahin ang Gawain",
+      "confirm": "Sigurado ka bang gusto mong burahin ang gawaing \"{title}\"? Hindi na ito maibabalik."
+    },
+    "calendar": {
+      "due": "Takdang Petsa:",
+      "start": "Umpisa:",
+      "end": "Katapusan:",
+      "notify": "Abisuhan:",
+      "status": "Katayuan:",
+      "priority": "Priyoridad:",
+      "taskInformation": "Impormasyon ng Gawain",
+      "description": "Paglalarawan",
+      "dueDate": "Takdang Petsa:",
+      "startTime":"Umpisa na Oras:",
+      "endTime":"Katapusan na Oras:",
+      "notificationTime":"Oras ng Abiso:",
+      "createdAt": "Nillikha sa:",
+      "buttons": {
+        "editTask": "I-edit ang gawain",
+        "viewDetails": "Tingnan ang mga detalye",
+        "markComplete":"Markahang Kumpleto",
+        "markPending":"Markahang Nakahabin"
+      
+      }
+    }
+  },
+  "treatment": {
+    "title": "Aklatan ng Paggamot sa Sakit",
+    "subtitle": "Maghanap ng impormasyon tungkol sa iba’t ibang sakit ng saging at itala ang iyong mga paggamot.",
+    "searchTitle": "Maghanap sa Aklatan ng mga Sakit",
+    "searchPlaceholder": "Maghanap ayon sa pangalan ng sakit...",
+    "noResults": "Walang natagpuang sakit na tumutugma.",
+    "about": "Tungkol",
+    "symptoms": "Sintomas",
+    "treatment": "Paggamot",
+    "prevention": "Pag-iwas",
+    "logTitle": "Itala ang Iyong Paggamot",
+    "logPlaceholder": "Ano ang iyong inilapat?",
+    "saveTreatment": "I-save ang Paggamot",
+    "historyTitle": "Kasaysayan ng Iyong mga Paggamot",
+    "noLogs": "Wala ka pang naitalang paggamot.",
+    "selectPrompt": "Pumili ng sakit upang makita ang mga detalye."
+  },
+  "learning": {
+    "header": {
+      "title": "Sentro ng Pag-aaral",
+      "description": "Mag-browse at i-access ang mga materyales na pang-edukasyon na ibinahagi ng aming mga propesyonal"
+    },
+    "breadcrumbs": {
+      "root": "Lahat ng Materyales"
+    },
+    "filters": {
+      "searchPlaceholder": "Maghanap ng mga materyales ayon sa pamagat, paglalarawan, o kategorya...",
+      "categories": "Lahat ng Kategorya",
+      "fileTypes": {
+        "all": "Lahat ng Uri ng File",
+        "document": "Mga Dokumento",
+        "image": "Mga Larawan",
+        "video": "Mga Bidyo",
+        "audio": "Mga Tunog",
+        "other": "Iba pa"
+      },
+      "sort": {
+        "newest": "Petsa (Pinakabago)",
+        "oldest": "Petsa (Pinakaluma)",
+        "nameAsc": "Pangalan (A-Z)",
+        "nameDesc": "Pangalan (Z-A)"
+      }
+    },
+    "empty": {
+      "title": "Walang available na materyales sa pag-aaral",
+      "description": "Subukang ayusin ang iyong mga filter o bumalik mamaya para sa mga bagong materyales"
+    },
+    "views": {
+      "list": "Tingin-Listahan",
+      "grid": "Tingin-Grid"
+    },
+    "table": {
+      "name": "Pangalan",
+      "type": "Uri",
+      "category": "Kategorya",
+      "size": "Sukat",
+      "added": "Idinagdag",
+      "action": "Aksyon"
+    },
+    "preview": {
+      "fullscreen": "I-toggle ang Fullscreen",
+      "unsupported": "Hindi ma-preview ang uri ng file na ito",
+      "download": "I-download ang File",
+      "details": {
+        "fileName": "Pangalan ng File",
+        "size": "Sukat",
+        "category": "Kategorya",
+        "sharedBy": "Ibinahagi ni",
+        "dateAdded": "Petsa ng Pagdaragdag"
+      }
+    },
+    "contextMenu": {
+      "details": "Tingnan ang mga Detalye"
+    }
+  },
+  "stores": {
+    "header": "Maghanap ng mga Tindahan ng Agri-Supply",
+    "searchPlaceholder": "Maglagay ng lokasyon",
+    "findNearMe": "Maghanap ng mga Tindahan Malapit sa Akin",
+    "loading": "Nilo-load ang mga tindahan...",
+    "empty": "Walang nahanap na tindahan.",
+    "distanceAway": "{distance} km ang layo",
+    "geolocationFailed": "Nabigo ang geolocation.",
+    "geolocationUnsupported": "Hindi suportado ng browser na ito ang geolocation.",
+    "yourLocation": "Iyong Lokasyon"
+  },
+  "weather": {
+    "header": {
+      "title": "Pagsubaybay sa Panahon",
+      "description": "Subaybayan ang mga kondisyon ng panahon para sa iyong plantasyon ng saging"
+    },
+    "loading": "Nilo-load ang data ng panahon...",
+    "error": "May Mali sa Pag-load ng Data ng Panahon",
+    "location": "Lokasyon",
+    "lastUpdated": "Huling na-update: {time}",
+    "refresh": "I-refresh",
+    "refreshing": "Nagre-refresh...",
+    "current": {
+      "title": "Kasalukuyang Panahon",
+      "feelsLike": "Pakiramdam ay",
+      "humidity": "Halumigmig",
+      "wind": "Hangin",
+      "rainfall": "Pag-ulan",
+      "uvIndex": "UV Index"
+    },
+    "growth": {
+      "title": "Mga Kondisyon sa Paglago ng Saging",
+      "temp": "Temperatura",
+      "humidity": "Halumigmig",
+      "rainfall": "Pag-ulan",
+      "optimal": "Pinakamainam",
+      "good": "Mabuti",
+      "warning": "Babala",
+      "critical": "Kritikal"
+    },
+    "forecast": {
+      "hourlyTitle": "Ulat Panahon sa Loob ng 24 Oras",
+      "dailyTitle": "Ulat Panahon sa Loob ng 7 Araw",
+      "noForecast": "Walang available na 7-araw na data ng pagtataya.",
+      "noForecastDesc": "Lalabas ang forecast kapag na-load ang data ng panahon."
+    },
+    "alerts": {
+      "title": "Mga Alerto sa Panahon",
+      "empty": "Walang aktibong alerto sa panahon",
+      "emptyDesc": "Ang iyong plantasyon ay kasalukuyang hindi apektado ng anumang masamang kondisyon ng panahon",
+      "prevention": "Mga Tip sa Pag-iwas:"
+    },
+    "diseaseRisk": {
+      "title": "Pagtatasa ng Panganib sa Sakit"
+    },
+    "history": {
+      "title": "Kasaysayan ng Panahon",
+      "daily": "Araw-araw",
+      "weekly": "Lingguhan",
+      "monthly": "Buwanan",
+      "seasonal": "Pana-panahon"
+    },
+    "pestPrediction": {
+      "title": "Pagtataya sa Aktibidad ng Peste",
+      "action": "Inirerekomendang Aksyon:"
+    },
+    "trends": {
+      "historical": {
+        "title": "Mak historical na Paglitaw ng Sakit at Peste",
+        "noTrends": "Walang makasaysayang trend na natagpuan para sa kasalukuyang kondisyon",
+        "description": "Ang mga trend ay batay sa mga pattern ng panahon at datos ng mga panahon.",
+        "recommendedActions": "Mga Inirerekomendang Aksyon:"
+      },
+      "current": {
+        "title": "Kasalukuyang Ugnayan ng Sakit at Peste",
+        "noCorrelations": "Walang kasalukuyang ugnayan ng sakit o peste na natagpuan.",
+        "description": "Ang mga ugnayan ay batay sa kasalukuyang panahon at makasaysayang datos ng pag-scan.",
+        "weather": "Pangkaraniwang Panahon",
+        "recommendedActions": "Mga Inirerekomendang Aksyon:"
+      }
+    },
+    "daily": {
+      "title": "Temperatura at Pag-ulan (Huling 7 Araw)",
+      "date": "Petsa",
+      "highTemp": "Pinakamataas na Temp (°C)",
+      "lowTemp": "Pinakamababang Temp (°C)",
+      "rainfall": "Pag-ulan (mm)",
+      "noData": "Walang makasaysayang datos na magagamit.",
+      "humidity": "Oras-oras na Halumigmig (%)",
+      "noHumidityData": "Walang datos ng oras-oras na halumigmig na magagamit.",
+      "rainfallHourly": "Oras-oras na Pag-ulan (mm)",
+      "noRainfallData": "Walang datos ng oras-oras na pag-ulan na magagamit.",
+      "windSpeed": "Oras-oras na Bilis ng Hangin (km/h)",
+      "noWindData": "Walang datos ng oras-oras na bilis ng hangin na magagamit."
+    },
+    "weekly": {
+      "tempTrend": "Lingguhang Trend ng Temperatura",
+      "noTempData": "Walang lingguhang datos ng temperatura na magagamit.",
+      "rainfall": "Lingguhang Pag-ulan",
+      "noRainData": "Walang lingguhang datos ng pag-ulan na magagamit.",
+      "summaryTitle": "Buod ng Panahon (Nakaraang Linggo)",
+      "avgTemp": "Karaniwang Temperatura",
+      "totalRainfall": "Kabuuang Pag-ulan",
+      "avgHumidity": "Karaniwang Halumigmig",
+      "maxWindSpeed": "Pinakamataas na Bilis ng Hangin",
+      "noValue": "Wala",
+      "noSummaryData": "Walang buod ng lingguhang datos na magagamit."
+    },
+    "monthly": {
+      "title": "Buwanang Temperatura at Pag-ulan",
+      "noData": "Walang buwanang datos ng temperatura at pag-ulan na magagamit.",
+      "statsTitle": "Buwanang Estadistika (Nakaraang Buwan)",
+      "highTemp": "Pinakamataas na Temperatura",
+      "lowTemp": "Pinakamababang Temperatura",
+      "totalRainfall": "Kabuuang Pag-ulan",
+      "rainyDays": "Mga Araw ng Pag-ulan",
+      "days": "araw",
+      "avgHumidity": "Karaniwang Halumigmig",
+      "noStats": "Walang buwanang estadistika na magagamit.",
+      "comparisonTitle": "Paghahambing sa Nakaraang Buwan",
+      "tempLabel": "Temperatura",
+      "rainfallLabel": "Pag-ulan",
+      "humidityLabel": "Halumigmig",
+      "sunnyDaysLabel": "Maaraw na Araw",
+      "noValue": "Wala"
+    },
+    "seasonal": {
+      "title": "Taunang Mga Pattern ng Panahon (Huling 12 Buwan)",
+      "noData": "Walang datos ng pana-panahong pattern ng panahon na magagamit.",
+      "currentPeriod": "Kasalukuyang Panahon",
+      "description": "Ipinapakita ng buod na ito ang mga uso sa nakaraang 12 buwan, na nagbibigay ng ideya sa karaniwang mga kondisyon ng panahon sa iyong lokasyon.",
+      "dataCoverage": "Saklaw ng Datos",
+      "start": "Simula",
+      "end": "Wakas",
+      "yearlyAverages": "Taunang Mga Average",
+      "avgTemp": "Karaniwang Temperatura",
+      "avgRainfall": "Karaniwang Buwanang Pag-ulan",
+      "avgHumidity": "Karaniwang Halumigmig",
+      "noYearlyAverage": "Walang taunang average na datos na magagamit.",
+      "forecastTitle": "Pana-panahong Pagtataya",
+      "forecastDescription": "Ang mga pagtataya ay batay sa makasaysayang mga pattern at kasalukuyang mga modelo ng klima. Ang seksyong ito ay karaniwang isinasama sa mas advanced na serbisyo ng pagtataya.",
+      "expectedRainfall": "Inaasahang Pag-ulan",
+      "expectedRainfallValue": "180-220 mm (sa susunod na 3 buwan)"
+    },
+    "correlation": {
+      "title": "Makasaysayang Ugnayan ng Panahon at Sakit",
+      "noData": "Walang makasaysayang datos ng ugnayan na magagamit.",
+      "description": "Ipinapakita kung paano nauugnay ang mga pattern ng panahon sa paglitaw ng mga sakit."
+    },
+    "refreshAuto": {
+    "title": "Mga Setting ng Awtomatikong Pag-refresh",
+    "autoLabel": "Awtomatikong Pag-refresh ng Datos ng Panahon",
+    "enableAuto": "Paganahin ang awtomatikong pag-refresh",
+    "intervalLabel": "Agwat ng Pag-refresh (minuto)",
+    "option5": "5 minuto",
+    "option10": "10 minuto",
+    "option15": "15 minuto",
+    "option30": "30 minuto",
+    "option60": "1 oras",
+    "note": "Ang madalas na pag-update ay maaaring gumamit ng mas maraming data at baterya sa mga mobile device.",
+    "save": "I-save ang Mga Setting"
+  },
+  "alert": {
+    "title": "Mga Setting ng Babala sa Panahon",
+    "notificationsLabel": "Mga Abiso ng Babala",
+    "email": "Mga Abiso sa Email",
+    "sms": "Mga Abiso sa SMS",
+    "app": "Mga Abiso sa Loob ng App",
+    "typesLabel": "Mga Uri ng Babala",
+    "severeWeather": "Babala sa Matinding Panahon (mula sa WeatherAPI)",
+    "diseaseRisk": "Mataas na Panganib ng Sakit (simulated)",
+    "pestActivity": "Tumaas na Aktibidad ng Peste (simulated)",
+    "save": "I-save ang Mga Setting"
+  }
+  },
+  "analytics": {
+    "header": {
+      "title": "Dashboard ng Analytics",
+      "description": "Isang pangkalahatang-ideya ng kalusugan ng iyong plantasyon at aktibidad ng pag-scan."
+    },
+    "filters": {
+      "dateRange": "Saklaw ng Petsa",
+      "last30d": "Huling 30 Araw",
+      "last90d": "Huling 90 Araw",
+      "allTime": "Lahat ng Oras",
+      "farmArea": "Bukid/Lugar (Barangay)",
+      "allAreas": "Lahat ng Lugar"
+    },
+    "hotspot": {
+      "title": "Alerto sa Hotspot!",
+      "description": "Ang lugar na may pinakamaraming natukoy ay <strong>{name}</strong> na may <strong>{detections}</strong> na sakit. Ang pinakakaraniwang banta doon ay <strong>{threat}</strong>."
+    },
+    "kpi": {
+      "healthScore": "Pangkalahatang Kalusugan",
+      "totalScans": "Kabuuang mga Scan",
+      "highSeverity": "Mga Alerto ng Mataas na Severity",
+      "commonThreat": "Pinakakaraniwang Banta"
+    },
+    "charts": {
+      "diseaseDistribution": "Distribusyon ng Sakit",
+      "monthlyActivity": "Buwanang Aktibidad ng Scan",
+      "severityBreakdown": "Pagsusuri ng Severity",
+      "dailyHeatmap": "Arawang Heatmap ng Aktibidad (Huling 90 Araw)",
+      "hotspotMap": "Mapa ng Hotspot ng Peste at Sakit"
+    },
+    "tables": {
+      "topThreats": "Mga Pangunahing Natukoy na Banta",
+      "areaPerformance": "Pagganap ng Lugar",
+      "headers": {
+        "disease": "Sakit",
+        "detections": "Mga Natukoy",
+        "avgSeverity": "Karaniwang Severity",
+        "area": "Lugar",
+        "scans": "Mga Scan",
+        "detectionRate": "Rate ng Pagtukoy"
+      }
+    },
+    "empty": {
+      "noDiseaseData": "Walang data ng sakit para sa panahong ito.",
+      "noMonthlyData": "Walang available na buwanang data.",
+      "noSeverityData": "Walang natukoy na may data ng severity."
+    }
+  },
+  "signout": {
+    "title": "Kumpirmasyon ng Pag-logout",
+    "message": "Sigurado ka bang gusto mong mag-logout sa iyong account?",
+    "confirmButton": "Mag-logout"
+  }
+}

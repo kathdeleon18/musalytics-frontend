@@ -1,0 +1,967 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An Error Occurred",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "viewAll": "View All",
+    "close": "Close",
+    "download": "Download",
+    "details": "Details",
+    "actions": "Actions",
+    "of": "of",
+    "next": "Next",
+    "prev": "Prev",
+    "ok": "OK",
+    "submit": "Submit",
+    "na": "N/A",
+    "search": "Search",
+    "filters": "Filters",
+    "clearAll": "Clear all",
+    "clearAllFilters": "Clear all filters",
+    "less": "Less",
+    "more": "More"
+  },
+  "dashboard": {
+    "header": {
+      "welcome": "Welcome, {firstName}",
+      "overview": "Here's your banana crop health overview"
+    },
+    "quickStats": {
+      "title": "Quick Stats",
+      "healthyPlants": "Healthy Plants",
+      "atRiskPlants": "At-Risk Plants",
+      "infectedPlants": "Infected Plants",
+      "treatedPlants": "Treated Plants"
+    },
+    "loading": "Loading your dashboard...",
+    "errorTitle": "Error Loading Dashboard",
+    "cta": {
+      "title": "Scan Your Banana Plants",
+      "description": "Upload images to identify banana plant issues.",
+      "button": "Start New Scan",
+      "userNotFound": "Hindi nahanap ang profile ng user. Mangyaring makipag-ugnayan sa suporta"
+    },
+    "stats": {
+  "accuracy": "Detection Accuracy",
+  "today": "Today",
+  "confidence": "Model Confidence",
+
+  "totalScans": "Total Scans",
+  "allTime": "All Time",
+  "scansThisWeek": "Scans This Week",
+
+  "plantationHealth": "Plantation Health",
+  "good": "Good",
+  "attention": "Attention",
+  "healthy": "Healthy",
+  "atRisk": "At Risk",
+
+  "weeklyStats": "Weekly Stats",
+  "thisWeek": "This Week",
+  "scansCompleted": "Scans Completed",
+  "issuesDetected": "Issues Detected"
+},
+    "recentDetections": {
+      "title": "Recent Detections",
+      "highRisk": "High Risk",
+      "mediumRisk": "Medium Risk",
+      "lowRisk": "Low Risk"
+    },
+    "weather": {
+      "title": "Weather Alert",
+      "region": "MIMAROPA Region",
+      "forecast": "Heavy Rainfall Expected",
+      "duration": "Next 3 days",
+      "recommendation": "High risk of Black Sigatoka spread due to increased humidity. Consider preventive fungicide application.",
+      "button": "View Detailed Forecast"
+    },
+    "actions": {
+      "title": "Recommended Actions",
+      "action1": "Apply fungicide to Field A (Black Sigatoka)",
+      "action2": "Set up weevil traps in Field B",
+      "action3": "Schedule follow-up scan for Field C",
+      "action4": "Prepare drainage systems for expected rainfall",
+      "priority": "Priority",
+      "highPriority": "High Priority",
+      "mediumPriority": "Medium Priority",
+      "lowPriority": "Low Priority",
+      "highSeverityTitle": "High severity alert for {disease}",
+      "highSeverityDesc": "{count} high severity detection(s) of {disease} found in the last week",
+      "hotspotTitle": "Hotspot detected in {area}",
+      "hotspotDesc": "{area} has {count} infection(s), making it a high-risk area",
+      "mediumSeverityTitle": "Multiple medium severity detections",
+      "mediumSeverityDesc": "{count} medium severity cases detected in your plantation",
+      "trendingTitle": "{disease} is trending in your plantation",
+      "trendingDesc": "{disease} cases increased by {trend}% this week",
+      "timeframe": "Timeframe",
+      "takeAction": "Take Action",
+      "improveHealthTitle": "Improve Plantation Health",
+      "improveHealthDesc": "Your plantation health score is below optimal. Consider implementing better practices.",
+      "bestPracticesTitle": "Implement Best Practices",
+      "bestPracticesDesc": "Follow established best practices for plantation management to prevent disease spread.",
+      "noActions": "No recommended actions at this time",
+      "timeframes": {
+        "immediate": "Immediate",
+        "urgent": "Within 48 hours",
+        "soon": "This week",
+        "week": "This week",
+        "month": "This month",
+        "ongoing": "Ongoing"
+      }
+    },
+    "analytics": {
+      "title": "Detection Analytics",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year",
+      "distributionTitle": "Disease/Pest Detection Distribution",
+      "statsTitle": "Detection Statistics",
+      "noData": "No data available",
+      "healthScore": "Health Score",
+      "weeklyDetections": "Weekly Detections",
+      "topDisease": "Top Disease",
+      "highRiskAreas": "High-Risk Areas"
+    }
+},
+  "profile": {
+    "header": {
+      "title": "My Profile",
+      "backTooltip": "Return to Dashboard"
+    },
+    "loading": "Loading profile...",
+    "status": {
+      "active": "Active Account"
+    },
+    "userCard": {
+      "roleProfessional": "Agricultural Professional",
+      "roleFarmer": "Banana Farmer",
+      "about": "About",
+      "noBio": "No bio provided. Click the icon to add one.",
+      "editBioPlaceholder": "Write a short bio...",
+      "noLocation": "No location provided",
+      "noPhone": "No phone provided",
+      "joined": "Joined {date}",
+      "verification": "Verification: {method}"
+    },
+    "stats": {
+      "title": "Activity Stats",
+      "scans": "Scans",
+      "reports": "Reports",
+      "farms": "Farms",
+      "dayStreak": "Day Streak"
+    },
+    "account": {
+      "title": "Account Settings",
+      "fullName": "Full Name",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "emailImmutable": "Email cannot be changed.",
+      "phone": "Phone Number",
+      "location": "Location",
+      "street": "Street Address",
+      "save": "Save Changes",
+      "success": "Profile updated successfully!",
+      "error": "Failed to update profile. Please try again."
+    },
+    "password": {
+      "title": "Password Settings",
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm New Password",
+      "save": "Update Password",
+      "success": "Password updated successfully!",
+      "errorMatch": "New passwords do not match.",
+      "errorLength": "New password must be at least 6 characters long.",
+      "errorUpdate": "Failed to update password. Check your current password."
+    },
+    "notifications": {
+      "title": "Notification Settings",
+      "email": "Email Notifications",
+      "sms": "SMS Notifications",
+      "weather": "Weather Alerts",
+      "disease": "Disease Outbreak Alerts",
+      "save": "Save Preferences",
+      "success": "Notification preferences saved!",
+      "error": "Failed to save preferences. Please try again."
+    }
+  },
+  "reports": {
+    "title": "My Saved Reports",
+    "description": "View and manage your saved banana disease reports",
+    "export": "Export",
+    "newScan": "New Scan",
+    "viewScanHistory": "View Scan History",
+    "errorLoading": "Error Loading Reports",
+    "stats": {
+      "total": "Total Reports",
+      "highSeverity": "High Severity",
+      "mediumSeverity": "Medium Severity",
+      "lowSeverity": "Low Severity",
+      "tagged": "Tagged Reports",
+      "withNotes": "With Notes"
+    },
+    "insights": {
+      "title": "Disease Insights",
+      "show": "Show Insights",
+      "hide": "Hide Insights",
+      "distribution": "Disease Distribution",
+      "severityDistribution": "Severity Distribution",
+      "overTime": "Reports Over Time",
+      "tagDistribution": "Tag Distribution",
+      "keyInsights": "Key Insights",
+      "noDiseaseData": "No disease data available",
+      "noTimeData": "No time data available",
+      "noTagsData": "No tags data available",
+      "reportsLabel": "{count} report | {count} reports",
+      "commonDisease": "Most common disease",
+      "reports": "Reports",
+      "highSeverityWarning": "high severity report requires immediate attention",
+      "commonTag": "Most used tag",
+      "trendIncrease": "Reports increased by {percent} in {last} compared to {prev}",
+      "trendDecrease": "Reports decreased by {percent} in {last} compared to {prev}",
+      "trendStable": "Report count remained stable in {last} compared to {prev}"
+    },
+    "empty": {
+      "title": "No Saved Reports Found",
+      "description": "You haven't saved any reports yet. When you find important scan results, save them as reports for future reference."
+    },
+    "filters": {
+      "searchPlaceholder": "Search reports...",
+      "cardView": "Card View",
+      "tableView": "Table View",
+      "active": "Active filters:",
+      "farmArea": {
+        "label": "All Farms/Areas"
+      },
+      "area": {
+        "allArea": "All Farms/Area",
+        "mainPlantation": "Main Plantation",
+        "eastField": "East Field",
+        "westField" : "West Field",
+        "southSection": "South Section",
+        "northSection" : "North Section"
+      },
+      "date": {
+        "label": "All Time",
+        "today": "Today",
+        "week": "This Week",
+        "month": "This Month",
+        "year": "This Year"
+      },
+      "disease": {
+        "label": "All Diseases",
+        "panama_disease": "Panama Disease",
+        "black_sigatoka": "Black Sigatoka",
+        "yellow_sigatoka": "Yellow Sigatoka",
+        "banana_bunchy_top": "Banana Bunchy Top",
+        "healthy": "Healthy"
+      },
+      "severity": {
+        "label": "All Severity",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "tag": {
+        "label": "All Tags",
+        "urgent": "Urgent",
+        "followUp": "Follow-up",
+        "treated": "Treated",
+        "forExpert": "For Expert",
+        "research": "Research"
+      }
+    },
+    "noResults": {
+      "title": "No matching reports found",
+      "description": "Try adjusting your filters or search query to find what you're looking for."
+    },
+    "card": {
+      "notesLabel": "Notes:",
+      "noNotes": "No additional notes",
+      "viewReport": "View Full Report",
+      "deleteReport": "Delete report"
+    },
+    "table": {
+      "image": "Image",
+      "disease": "Disease",
+      "date": "Date",
+      "severity": "Severity",
+      "confidence": "Confidence",
+      "tags": "Tags",
+      "action": "Action",
+      "status": "Status",
+      "noTags": "No tags",
+      "noStatus": "No status"
+    },
+    "deleteModal": {
+      "title": "Delete Report",
+      "confirm": "Are you sure you want to delete this report? This action cannot be undone."
+    },
+    "successModal": {
+      "deleteSuccessTitle" : "Report Deleted",
+      "deleteSuccessMessage": "The report has been successfully deleted from your records."
+    },
+    "detailsModal": {
+      "title": "Report Details",
+      "print": "Print Report",
+      "loading": "Loading report details...",
+      "infoTitle": "Report Information",
+      "reportId": "Report ID:",
+      "created": "Created:",
+      "scanDate": "Scan Date:",
+      "location": "Location:",
+      "severity": "Severity",
+      "confidence": "Confidence",
+      "notesTitle": "Notes",
+      "notesPlaceholder": "Add your observations or notes about this report...",
+      "noNotes": "No notes added to this report.",
+      "tagsTitle": "Tags",
+      "noTags": "No tags added to this report.",
+      "statusTitle": "Status",
+      "noStatus": "No status set for this report.",
+      "actionTitle": "Action Taken",
+      "actionPlaceholder": "Describe what action you've taken to address this issue...",
+      "noAction": "No action recorded for this report.",
+      "confidenceTitle": "Confidence Level",
+      "tabs": {
+        "overview": "Overview",
+        "symptoms": "Symptoms",
+        "treatment": "Treatment",
+        "prevention": "Prevention"
+      },
+      "diseaseInfo": {
+        "noDescription": "No description available.",
+        "scientificName": "Scientific Name:",
+        "category": "Category:",
+        "symptomsTitle": "Symptoms",
+        "noSymptoms": "No symptoms information is available yet for this disease.",
+        "updatesSoon": "Check back later for updates.",
+        "affectedParts": "Affected Parts:",
+        "treatmentTitle": "Treatment Recommendations",
+        "noTreatment": "No treatment information is available yet for this disease.",
+        "preventionTitle": "Prevention Tips",
+        "noPrevention": "No prevention information is available yet for this disease."
+      },
+      "mapTitle": "Location",
+      "exportPDF": "Export PDF",
+      "share": "Share"
+    }
+  },
+  "treatment": {
+    "title": "Disease Treatment Library",
+    "subtitle": "Find information on various banana diseases and log your treatment actions.",
+    "searchTitle": "Search Diseases Library",
+    "searchPlaceholder": "Search by disease name...",
+    "noResults": "No matching diseases found.",
+    "about": "About",
+    "symptoms": "Symptoms",
+    "treatment": "Treatment",
+    "prevention": "Prevention",
+    "logTitle": "Log Your Treatment",
+    "logPlaceholder": "What did you apply?",
+    "saveTreatment": "Save Treatment",
+    "historyTitle": "Your Treatment History",
+    "noLogs": "No treatments logged yet.",
+    "selectPrompt": "Select a disease to view details."
+  },
+  "scan": {
+    "scanAndDetect": "Scan & Detect",
+    "uploadInstructions": "Upload images to identify banana plant issues",
+    "detectingLocation": "Detecting location...",
+    "detectedArea": "Detected Area:",
+    "locationNotDetected": "Location not detected, scan or capture to detect location",
+    "dismiss": "Dismiss",
+    "notConnected": "Not connected to analysis server. Some features may be limited.",
+    "reconnect": "Reconnect",
+    "uploadForAnalysis": "Upload Images for Analysis",
+    "uploadImages": "Upload Images",
+    "useCamera": "Use Camera",
+    "dragAndDrop": "Drag & Drop Images Here",
+    "uploadTips": "Upload clear images of banana plant leaves, stems, or fruits for best results. Supported formats: JPG, PNG.",
+    "selectImages": "Select Images",
+    "imageConstraints": "Maximum 5 images, up to 10MB each",
+    "takeAPicture": "Take a Picture",
+    "requestingPermission": "Requesting Camera Permission",
+    "allowAccess": "Please allow access when prompted by your browser",
+    "permissionDenied": "Camera Permission Denied",
+    "allowAccessSettings": "You need to allow camera access in your browser settings",
+    "howToEnable": "How to enable camera access:",
+    "howToStep1": "Click the camera or lock icon in your browser's address bar",
+    "howToStep2": "Select \"Allow\" for camera access",
+    "howToStep3": "Refresh the page and try again",
+    "cameraTip": "Use your device's camera to take a clear picture of the banana plant.",
+    "startCamera": "Start Camera",
+    "retake": "Retake",
+    "useThisImage": "Use This Image",
+    "selectedImages": "Selected Images",
+    "startAnalysis": "Start Analysis",
+    "analyzingImages": "Analyzing Images",
+    "analyzingDesc": "Our AI model is processing your images to detect banana plant diseases and pests. This may take a few moments...",
+    "analysisResults": "Analysis Results",
+    "startNewScan": "Start New Scan",
+    "confidence": "Confidence",
+    "severity": "Severity",
+    "treatment": "Treatment",
+    "symptoms": "Symptoms",
+    "prevention": "Prevention",
+    "info": "Info",
+    "requestInformation": "Request Information",
+    "translating": "Translating...",
+    "treatmentRecommendations": "Treatment Recommendations",
+    "noTreatmentInfo": "No treatment information is available yet for this disease.",
+    "noSymptomsInfo": "No symptoms information is available yet for this disease.",
+    "preventionTips": "Prevention Tips",
+    "noPreventionInfo": "No prevention information is available yet for this disease.",
+    "additionalInformation": "Additional Information",
+    "causes": "Causes:",
+    "additionalDetails": "Additional Details:",
+    "noAdditionalInfo": "No additional information is available yet for this disease.",
+    "saveToReports": "Save to Reports",
+    "saving": "Saving...",
+    "recentScans": "Recent Scans",
+    "noRecentScans": "No recent scans found",
+    "noRecentScansDesc": "Upload and analyze images to see your scan history",
+    "image": "Image",
+    "detection": "Detection",
+    "date": "Date",
+    "viewDetails": "View Details",
+    "downloadReport": "Download Report",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "requestInfoTitle": "Request Disease Information",
+    "requestInfoDesc": "Your request will be sent to our agricultural professionals. They will research and add information about this disease to our database.",
+    "messageOptional": "Message (Optional)",
+    "requestPlaceholder": "Add any specific questions or details about what you'd like to know...",
+    "notifyMe": "Notify me when information becomes available",
+    "submitRequest": "Submit Request",
+    "submitting": "Submitting...",
+    "reportSavedSuccess": "Report Saved Successfully",
+    "saveFailed": "Save Failed",
+    "progressStep1": "Preprocessing images...",
+    "progressStep2": "Running detection model...",
+    "progressStep3": "Analyzing results...",
+    "progressStep4": "Finalizing report...",
+    "successModal": {
+      "title": "Report Saved Successfully",
+      "message": "Your analysis has been added to 'My Reports'. You can now track its status and add notes.",
+      "viewReportsButton": "View All Reports"
+    },
+    "requestModal": {
+      "title": "Request Disease Information",
+      "description": "Your request will be sent to our agricultural professionals. They will research and add information about this disease to our database.",
+      "messageLabel": "Message (Optional)",
+      "messagePlaceholder": "Add any specific questions or details about what you'd like to know...",
+      "notifyLabel": "Notify me when information becomes available",
+      "submitButton": "Submit Request",
+      "submittingButton": "Submitting..."
+    }
+  },
+  "scanHistory": {
+    "scanHistoryTitle": "Scan History",
+    "scanHistoryDesc": "View and manage your previous banana disease scans",
+    "totalScans": "Total Scans",
+    "highSeverity": "High Severity",
+    "mediumSeverity": "Medium Severity",
+    "healthyPlants": "Healthy Plants",
+    "errorTitle": "Error Loading Scan History",
+    "emptyTitle": "No Scan History Found",
+    "emptyDesc": "You haven't performed any banana disease scans yet. Start by scanning your banana plants to detect diseases and track their health over time.",
+    "scanNow": "Scan Now",
+    "searchPlaceholder": "Search scans...",
+    "dateAll": "All Time",
+    "dateToday": "Today",
+    "dateWeek": "This Week",
+    "dateMonth": "This Month",
+    "dateYear": "This Year",
+    "diseaseAll": "All Diseases",
+    "diseasePanama": "Panama Disease",
+    "diseaseBlackSigatoka": "Black Sigatoka",
+    "diseaseYellowSigatoka": "Yellow Sigatoka",
+    "diseaseBunchyTop": "Banana Bunchy Top",
+    "diseaseHealthy": "Healthy",
+    "severityAll": "All Severity",
+    "severityHigh": "High",
+    "severityMedium": "Medium",
+    "severityLow": "Low",
+    "sortNewest": "Newest First",
+    "sortOldest": "Oldest First",
+    "sortConfidenceHigh": "Highest Confidence",
+    "sortConfidenceLow": "Lowest Confidence",
+    "activeFilters": "Active filters:",
+    "noResultsTitle": "No matching scans found",
+    "noResultsDesc": "Try adjusting your filters or search query to find what you're looking for.",
+    "viewDetails": "View Details",
+    "tableImage": "Image",
+    "tableDisease": "Disease",
+    "tableDate": "Date",
+    "tableSeverity": "Severity",
+    "tableConfidence": "Confidence",
+    "tableActions": "Actions",
+    "deleteModalTitle": "Delete Scan",
+    "deleteModalDesc": "Are you sure you want to delete this scan? This action cannot be undone.",
+    "scanDetailsTitle": "Scan Details",
+    "scanInfoTitle": "Scan Information",
+    "analysisId": "Analysis ID:",
+    "dateLabel": "Date:",
+    "locationLabel": "Location:",
+    "captureMethodLabel": "Capture Method:",
+    "deviceLabel": "Device:",
+    "severityLabel": "Severity:",
+    "confidenceLabel": "Confidence Level",
+    "confidenceLow": "Low",
+    "confidenceMedium": "Medium",
+    "confidenceHigh": "High",
+    "tabOverview": "Overview",
+    "tabSymptoms": "Symptoms",
+    "tabTreatment": "Treatment",
+    "tabPrevention": "Prevention",
+    "loadingScanDetails":"Loading scan details...",
+    "noDescription": "No description available.",
+    "scientificName": "Scientific Name:",
+    "category": "Category:",
+    "noSymptomsInfo": "No symptoms information is available yet.",
+    "treatmentRecommendations": "Treatment Recommendations",
+    "noTreatmentInfo": "No treatment information is available yet.",
+    "preventionTips": "Prevention Tips",
+    "noPreventionInfo": "No prevention information is available yet.",
+    "saveToReport": "Save to Report",
+    "share": "Share",
+    "reportSavedSuccessTitle": "Report Saved Successfully",
+    "reportSavedSuccessDesc": "You can access all your saved reports in the Reports section.",
+    "saveToReportTitle": "Save to Reports",
+    "saveToReportDesc": "Add this scan to your reports collection for easy reference later.",
+    "notesOptional": "Notes (Optional)",
+    "notesPlaceholder": "Add any observations or notes about this scan...",
+    "tagsOptional": "Tags (Optional)",
+    "saveReportButton": "Save Report",
+    "saving": "Saving..."
+  },
+  "tags": {
+    "label": "Tags (Optional)",
+    "urgent": "Urgent",
+    "followUp": "Follow-up",
+    "treated": "Treated",
+    "forExpert": "For Expert",
+    "research": "Research"
+  },
+  "tasks": {
+    "header": {
+      "title": "Task Overview",
+      "description": "Visualize and manage your tasks efficiently."
+    },
+    "views": {
+      "week": "Week",
+      "day": "Day"
+    },
+    "stats": {
+      "total": "Total Tasks",
+      "completed": "Completed",
+      "pending": "Pending",
+      "overdue": "Overdue"
+    },
+    "errorState": {
+      "errorLoadingTasks": "Error Loading Tasks"
+    },
+    "filters": {
+      "searchPlaceholder": "Search tasks by title or description...",
+      "status": {
+        "all": "All Status",
+        "pending": "Pending",
+        "completed": "Completed",
+        "overdue": "Overdue"
+      },
+      "priority": {
+        "all": "All Priority",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      },
+      "dueDate": {
+        "all": "All Time",
+        "today": "Today",
+        "week": "This Week",
+        "month": "This Month"
+      },
+      "sort": {
+        "dueAsc": "Due Date (Soonest)",
+        "dueDesc": "Due Date (Latest)",
+        "priorityDesc": "Priority (High to Low)",
+        "priorityAsc": "Priority (Low to High)",
+        "createdDesc": "Newest First",
+        "createdAsc": "Oldest First"
+      },
+      "active": "Active filters:"
+    },
+    "searchResults": "Search Results for \"{query}\"",
+    "dailyListTitle": "Tasks for {date}",
+    "noTasksForDay": "No tasks for {date}",
+    "noTasksFound": "No tasks found",
+    "noTasksMessage": "Try adjusting your search query or filters.",
+    "addNewTasksMessage": "Add a new task or select a different day.",
+    "addTaskForToday": "Add Task for Today",
+    "quickAdd": {
+      "title": "Add Task",
+      "taskTitle": "Task title",
+      "dueDate": "Due Date",
+      "priority": "Priority",
+      "button": "Add Task Details",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "categories": {
+      "title": "Task Categories"
+    },
+    "monthlyOverview": {
+      "title": "Tasks for {month}",
+      "empty": "No tasks scheduled for this month."
+    },
+    "modal": {
+      "addTitle": "Add New Task",
+      "editTitle": "Edit Task",
+      "detailsTitle": "Task Details",
+      "addDesc": "Fill in the details to create a new task.",
+      "editDesc": "Update the details for this task.",
+      "labels": {
+        "title": "Title",
+        "description": "Description (Optional)",
+        "dueDate": "Due Date",
+        "startTime": "Start Time (Optional)",
+        "endTime": "End Time (Optional)",
+        "notificationTime": "Notification Time (Optional)",
+        "priority": "Priority",
+        "status": "Status"
+      },
+      "placeholders": {
+        "title": "e.g., Finish project report",
+        "description": "Add more details about the task..."
+      },
+      "buttons": {
+        "saveChanges": "Save Changes",
+        "addTask": "Add Task",
+        "markPending": "Mark Pending",
+        "markComplete": "Mark Complete"
+      }
+    },
+    "deleteModal": {
+      "title": "Delete Task",
+      "confirm": "Are you sure you want to delete the task \"{title}\"? This action cannot be undone."
+    },
+    "calendar": {
+      "due": "Due:",
+      "start": "Start:",
+      "end": "End:",
+      "notify": "Notify:",
+      "status": "Status:",
+      "priority": "Priority:",
+      "taskInformation": "Task Information",
+      "description": "Description:",
+      "dueDate": "Due Date:",
+      "startTime":"Start Time:",
+      "endTime":"End Time:",
+      "notificationTime":"Notification Time:",
+      "createdAt": "Created At:",
+      
+      "buttons": {
+        "editTask": "Edit Task",
+        "viewDetails": "View Details",
+        "markComplete":"Mark Complete",
+        "markPending":"Mark Pending"
+      }
+    }
+  },
+  "learning": {
+    "header": {
+      "title": "Learning Center",
+      "description": "Browse and access educational materials shared by our professionals"
+    },
+    "breadcrumbs": {
+      "root": "All Materials"
+    },
+    "filters": {
+      "searchPlaceholder": "Search materials by title, description, or category...",
+      "categories": "All Categories",
+      "fileTypes": {
+        "all": "All File Types",
+        "document": "Documents",
+        "image": "Images",
+        "video": "Videos",
+        "audio": "Audio",
+        "other": "Other"
+      },
+      "sort": {
+        "newest": "Date (Newest)",
+        "oldest": "Date (Oldest)",
+        "nameAsc": "Name (A-Z)",
+        "nameDesc": "Name (Z-A)"
+      }
+    },
+    "empty": {
+      "title": "No learning materials available",
+      "description": "Try adjusting your search filters or check back later for new materials"
+    },
+    "views": {
+      "list": "List View",
+      "grid": "Grid View"
+    },
+    "table": {
+      "name": "Name",
+      "type": "Type",
+      "category": "Category",
+      "size": "Size",
+      "added": "Added",
+      "action": "Action"
+    },
+    "preview": {
+      "fullscreen": "Toggle Fullscreen",
+      "unsupported": "This file type cannot be previewed",
+      "download": "Download File",
+      "details": {
+        "fileName": "File Name",
+        "size": "Size",
+        "category": "Category",
+        "sharedBy": "Shared By",
+        "dateAdded": "Date Added"
+      }
+    },
+    "contextMenu": {
+      "details": "View Details"
+    }
+  },
+  "stores": {
+    "header": "Find Agri-Supply Stores",
+    "searchPlaceholder": "Enter a location",
+    "findNearMe": "Find Stores Near Me",
+    "loading": "Loading stores...",
+    "empty": "No stores found.",
+    "distanceAway": "{distance} km away",
+    "geolocationFailed": "Geolocation failed.",
+    "geolocationUnsupported": "Geolocation is not supported by this browser.",
+    "yourLocation": "Your Location"
+  },
+  "weather": {
+    "header": {
+      "title": "Weather Monitoring",
+      "description": "Track weather conditions for your banana plantation"
+    },
+    "loading": "Loading weather data...",
+    "error": "Error Loading Weather Data",
+    "location": "Location",
+    "lastUpdated": "Last updated: {time}",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "current": {
+      "title": "Current Weather",
+      "feelsLike": "Feels like",
+      "humidity": "Humidity",
+      "wind": "Wind",
+      "rainfall": "Rainfall",
+      "uvIndex": "UV Index"
+    },
+    "growth": {
+      "title": "Banana Growth Conditions",
+      "temp": "Temperature",
+      "humidity": "Humidity",
+      "rainfall": "Rainfall",
+      "optimal": "Optimal",
+      "good": "Good",
+      "warning": "Warning",
+      "critical": "Critical"
+    },
+    "forecast": {
+      "hourlyTitle": "24-Hour Temperature Forecast",
+      "dailyTitle": "7-Day Forecast",
+      "noForecast": "No 7-day forecast data available.",
+      "noForecastDesc": "Forecast will appear once weather data is loaded."
+    },
+    "alerts": {
+      "title": "Weather Alerts",
+      "empty": "No active weather alerts",
+      "emptyDesc": "Your plantation is currently not affected by any severe weather conditions",
+      "prevention": "Prevention Tips:"
+    },
+    "diseaseRisk": {
+      "title": "Disease Risk Assessment"
+    },
+    "history": {
+      "title": "Weather History",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "seasonal": "Seasonal"
+    },
+    "pestPrediction": {
+      "title": "Pest Activity Prediction",
+      "action": "Recommended Action:"
+    },
+    "trends": {
+      "historical": {
+        "title": "Historical Disease & Pest Trends",
+        "noTrends": "No historical trends found for current conditions",
+        "description": "Trends are based on historical weather patterns and seasonal data.",
+        "recommendedActions": "Recommended Actions:"
+      },
+      "current": {
+        "title": "Current Disease & Pest Correlation Overview",
+        "noCorrelations": "No current disease or pest correlations found.",
+        "description": "Correlations are based on current weather and historical scan data.",
+        "weather": "Avg. Weather",
+        "recommendedActions": "Recommended Actions:"
+      }
+    },
+    "daily": {
+      "title": "Temperature & Rainfall (Last 7 Days)",
+      "date": "Date",
+      "highTemp": "High Temp (°C)",
+      "lowTemp": "Low Temp (°C)",
+      "rainfall": "Rainfall (mm)",
+      "noData": "No historical data available.",
+      "humidity": "Hourly Humidity (%)",
+      "noHumidityData": "No hourly humidity data available.",
+      "rainfallHourly": "Hourly Rainfall (mm)",
+      "noRainfallData": "No hourly rainfall data available.",
+      "windSpeed": "Hourly Wind Speed (km/h)",
+      "noWindData": "No hourly wind speed data available."
+    },
+    "weekly": {
+      "tempTrend": "Weekly Temperature Trend",
+      "noTempData": "No weekly temperature data available.",
+      "rainfall": "Weekly Rainfall",
+      "noRainData": "No weekly rainfall data available.",
+      "summaryTitle": "Weekly Weather Summary (Last Week)",
+      "avgTemp": "Avg. Temperature",
+      "totalRainfall": "Total Rainfall",
+      "avgHumidity": "Avg. Humidity",
+      "maxWindSpeed": "Max Wind Speed",
+      "noValue": "N/A",
+      "noSummaryData": "No weekly summary data available."
+    },
+     "monthly": {
+      "title": "Monthly Temperature & Rainfall",
+      "noData": "No monthly temperature and rainfall data available.",
+      "statsTitle": "Monthly Statistics (Last Month)",
+      "highTemp": "Highest Temperature",
+      "lowTemp": "Lowest Temperature",
+      "totalRainfall": "Total Rainfall",
+      "rainyDays": "Rainy Days",
+      "days": "days",
+      "avgHumidity": "Average Humidity",
+      "noStats": "No monthly statistics available.",
+      "comparisonTitle": "Comparison to Previous Month",
+      "tempLabel": "Temperature",
+      "rainfallLabel": "Rainfall",
+      "humidityLabel": "Humidity",
+      "sunnyDaysLabel": "Sunny Days",
+      "noValue": "N/A"
+    },
+    "seasonal": {
+      "title": "Yearly Weather Patterns (Last 12 Months)",
+      "noData": "No seasonal weather patterns data available.",
+      "currentPeriod": "Current Period",
+      "description": "This overview shows trends over the last 12 months, providing insights into typical weather patterns for your location.",
+      "dataCoverage": "Data Coverage",
+      "start": "Start",
+      "end": "End",
+      "yearlyAverages": "Yearly Averages",
+      "avgTemp": "Avg. Temperature",
+      "avgRainfall": "Avg. Monthly Rainfall",
+      "avgHumidity": "Avg. Humidity",
+      "noYearlyAverage": "No yearly average data available.",
+      "forecastTitle": "Seasonal Forecast",
+      "forecastDescription": "Forecasted trends are based on historical patterns and current climate models. This section would typically integrate with a more advanced forecasting service.",
+      "expectedRainfall": "Expected Rainfall",
+      "expectedRainfallValue": "180-220 mm (next 3 months)"
+    },
+    "correlation": {
+      "title": "Historical Weather–Disease Correlation",
+      "noData": "No historical correlation data available.",
+      "description": "Shows how weather patterns have correlated with disease outbreaks."
+    },
+    "refreshAuto": {
+    "title": "Auto-refresh Settings",
+    "autoLabel": "Auto-refresh Weather Data",
+    "enableAuto": "Enable automatic refresh",
+    "intervalLabel": "Auto-refresh Interval (minutes)",
+    "option5": "5 minutes",
+    "option10": "10 minutes",
+    "option15": "15 minutes",
+    "option30": "30 minutes",
+    "option60": "1 hour",
+    "note": "More frequent updates may use more data and battery on mobile devices.",
+    "save": "Save Settings"
+  },
+  "alert": {
+    "title": "Weather Alert Settings",
+    "notificationsLabel": "Alert Notifications",
+    "email": "Email Alerts",
+    "sms": "SMS Alerts",
+    "app": "In-App Notifications",
+    "typesLabel": "Alert Types",
+    "severeWeather": "Severe Weather Warnings (from WeatherAPI)",
+    "diseaseRisk": "High Disease Risk (simulated)",
+    "pestActivity": "Increased Pest Activity (simulated)",
+    "save": "Save Settings"
+  }
+},
+  "analytics": {
+    "header": {
+      "title": "Analytics Dashboard",
+      "description": "An overview of your plantation's health and scan activity."
+    },
+    "filters": {
+      "dateRange": "Date Range",
+      "last30d": "Last 30 Days",
+      "last90d": "Last 90 Days",
+      "allTime": "All Time",
+      "farmArea": "Farm/Area (Barangay)",
+      "allAreas": "All Areas"
+    },
+    "hotspot": {
+      "title": "Hotspot Alert!",
+      "description": "The area with the most detections is <strong>{name}</strong> with <strong>{detections}</strong> diseases. The most common threat there is <strong>{threat}</strong>."
+    },
+    "kpi": {
+      "healthScore": "Overall Health Score",
+      "totalScans": "Total Scans",
+      "highSeverity": "High Severity Alerts",
+      "commonThreat": "Most Common Threat"
+    },
+    "charts": {
+      "diseaseDistribution": "Disease Distribution",
+      "monthlyActivity": "Monthly Scan Activity",
+      "severityBreakdown": "Severity Breakdown",
+      "dailyHeatmap": "Daily Activity Heatmap (Last 90 Days)",
+      "hotspotMap": "Pest & Disease Hotspot Map"
+    },
+    "tables": {
+      "topThreats": "Top Detected Threats",
+      "areaPerformance": "Area Performance",
+      "headers": {
+        "disease": "Disease",
+        "detections": "Detections",
+        "avgSeverity": "Avg. Severity",
+        "area": "Area",
+        "scans": "Scans",
+        "detectionRate": "Detection Rate"
+      }
+    },
+    "empty": {
+      "noDiseaseData": "No disease data for this period.",
+      "noMonthlyData": "No monthly data available.",
+      "noSeverityData": "No detections with severity data."
+    }
+  },
+  "signout": {
+    "title": "Sign Out Confirmation",
+    "message": "Are you sure you want to sign out of your account?",
+    "confirmButton": "Sign Out"
+  }
+  
+  
+}
+
