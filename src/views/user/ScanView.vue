@@ -1113,6 +1113,10 @@ const startAnalysis = async () => {
           timestamp: analysisResponse.results.timestamp
         };
 
+        // Fetch detailed disease information (this was missing!)
+        console.log("Fetching detailed disease information for:", detection.label);
+        await fetchDiseaseDetails(detection.label);
+
       // Save to reports
       await saveAnalysisToReports(analysisResponse.analysisId, {
         analysisId: analysisResponse.analysisId,
@@ -1383,11 +1387,17 @@ const fetchDiseaseDetails = async (diseaseName) => {
   try {
     if (!diseaseName) return;
 
+    console.log("Fetching disease details for:", diseaseName);
+
     const normalizeForComparison = (name) => name.toLowerCase().replace(/[_\-.\s]/g, '').replace(/s\b/g, '');
     const normalizedDiseaseName = normalizeForComparison(diseaseName);
 
+    console.log("Normalized disease name:", normalizedDiseaseName);
+
     const diseasesRef = collection(db, "diseases");
     const querySnapshot = await getDocs(diseasesRef);
+
+    console.log(`Found ${querySnapshot.size} diseases in database`);
 
     let matchedDisease = null;
     let bestMatchScore = 0;
@@ -1404,13 +1414,22 @@ const fetchDiseaseDetails = async (diseaseName) => {
         score = 80;
       }
 
+      console.log(`Comparing "${docDiseaseName}" (${normalizedDocName}) with "${diseaseName}" (${normalizedDiseaseName}) - Score: ${score}`);
+
       if (score > bestMatchScore) {
         bestMatchScore = score;
         matchedDisease = { id: doc.id, ...diseaseData };
       }
     });
 
+    console.log(`Best match score: ${bestMatchScore}`);
+    console.log("Matched disease:", matchedDisease);
+
     diseaseDetails.value = bestMatchScore >= 80 ? matchedDisease : null;
+
+    if (!diseaseDetails.value) {
+      console.log("No disease details found - this is why tabs are empty");
+    }
 
   } catch (err) {
     console.error("Error fetching disease details:", err);
