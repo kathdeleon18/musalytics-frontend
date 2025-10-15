@@ -727,7 +727,7 @@ import SignOutConfirmation from '../../components/user/SignOutConfirmation.vue';
 import SkeletonLoader from '../../components/SkeletonLoader.vue';
 // NotificationPanel import is no longer needed here
 // WebSocket imports removed - now using HTTP-based analysis
-import { uploadImage, requestImageAnalysis, saveAnalysisToReports, getRecentScans, saveScanToFirestore } from '../../services/imageService';
+import { uploadImage, requestImageAnalysis, saveAnalysisToReports, saveAnalysisToBackend, getRecentScans, saveScanToFirestore } from '../../services/imageService';
 import { fetchCurrentAndForecastWeatherData, getWeatherDescription } from '../../services/weatherService.js';
 
 // Router
@@ -1114,6 +1114,15 @@ const startAnalysis = async () => {
         timestamp: analysisResult.results.timestamp,
         deviceType: 'web',
         captureMethod: captureMode.value
+      });
+
+      // Save to backend database for recent scans (this was missing!)
+      await saveAnalysisToBackend(analysisResult.analysisId, {
+        analysisId: analysisResult.analysisId,
+        imageId: uploadResponse.imageId,
+        userId: auth.currentUser.uid,
+        detection: detection,
+        timestamp: analysisResult.results.timestamp
       });
 
       scanSaved.value = true;

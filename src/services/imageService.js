@@ -108,6 +108,28 @@ export async function requestImageAnalysis(imageUrl, options = {}) {
 }
 
 /**
+ * Save analysis results to backend database (for recent scans)
+ * @param {string} analysisId - The ID of the analysis
+ * @param {Object} analysisData - The analysis data to save
+ * @returns {Promise<Object>} - The save response
+ */
+export async function saveAnalysisToBackend(analysisId, analysisData) {
+  try {
+    const response = await axios.post(`${API_URL}/analyses`, {
+      analysisId: analysisData.analysisId,
+      imageId: analysisData.imageId,
+      userId: analysisData.userId,
+      detection: analysisData.detection,
+      timestamp: analysisData.timestamp
+    })
+    return response.data
+  } catch (error) {
+    console.error("Error saving analysis to backend:", error)
+    throw error
+  }
+}
+
+/**
  * Get analysis results for an image
  * @param {string} analysisId - The ID of the analysis
  * @returns {Promise<Object>} - The analysis results
