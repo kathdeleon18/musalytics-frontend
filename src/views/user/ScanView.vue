@@ -759,7 +759,16 @@ import { fetchCurrentAndForecastWeatherData, getWeatherDescription } from '../..
 
 // Router
 const router = useRouter();
-const { t, te } = useI18n();
+const { t, te, locale } = useI18n();
+
+// Debug: Log current locale
+console.log('Current locale:', locale.value);
+
+// Watch for locale changes
+watch(locale, (newLocale) => {
+  console.log('Locale changed to:', newLocale);
+  console.log('Treatment recommendations translation:', t('scan.treatmentRecommendations'));
+});
 
 // State
 const isLoading = ref(false);
