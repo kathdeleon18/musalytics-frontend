@@ -1144,6 +1144,26 @@ const startAnalysis = async () => {
         // Don't throw - we still want to save to reports even if backend fails
       }
 
+      // Save to Firestore scan_history (this was missing!)
+      console.log("Saving scan to Firestore scan_history...");
+      try {
+        await saveScanToFirestore({
+          ...analysisResult.value,
+          userId: auth.currentUser.uid,
+          location: null, // We can add location data later if needed
+          deviceType: captureMode.value,
+          captureMethod: captureMode.value,
+          imageUrl: imageUrl,
+          diseaseDetails: diseaseDetails.value ? { ...diseaseDetails.value } : null,
+          weather: currentWeather.value,
+          userLocationDetails: userLocationDetails.value,
+        });
+        console.log("Scan successfully saved to Firestore scan_history");
+      } catch (firestoreError) {
+        console.error("Error saving to Firestore scan_history:", firestoreError);
+        // Don't throw - we still want to continue even if Firestore save fails
+      }
+
       scanSaved.value = true;
     } else {
       throw new Error("Analysis failed or returned invalid results");
