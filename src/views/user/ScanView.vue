@@ -412,11 +412,14 @@
                         <h5 class="font-semibold mb-2 text-[#606c38] text-lg">{{ $t('scan.treatmentRecommendations') }}</h5>
 
                           <div v-if="diseaseDetails && diseaseDetails.treatment" class="mb-4">
-                          <div v-html="diseaseDetails.treatment" class="text-xs text-gray-600"></div>
+                          <div v-html="diseaseDetails.treatment" class="prose prose-sm max-w-none text-gray-700 leading-relaxed"></div>
                         </div>
 
-                        <div v-else class="text-center py-6">
-                          <p class="text-gray-500 mb-4">{{ $t('scan.noTreatmentInfo') }}</p>
+                        <div v-else class="text-center py-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <p class="text-gray-500 mb-4 text-sm">{{ $t('scan.noTreatmentInfo') }}</p>
                           <button
                             @click="openRequestInfoModal"
                             class="px-4 py-2 bg-[#606c38] hover:bg-[#c9d4a3]/100 text-white hover:text-[#606c38] rounded-xl text-sm font-medium transition-colors inline-flex items-center"
@@ -431,10 +434,13 @@
                         <h5 class="font-semibold mb-2 text-[#606c38] text-lg">{{ $t('scan.symptoms') }}</h5>
 
                         <div v-if="diseaseDetails && diseaseDetails.symptoms" class="mb-4">
-                          <div v-html="diseaseDetails.symptoms" class="text-xs text-gray-600"></div>
+                          <div v-html="diseaseDetails.symptoms" class="prose prose-sm max-w-none text-gray-700 leading-relaxed"></div>
                         </div>
-                        <div v-else class="text-center py-6">
-                          <p class="text-gray-500 mb-4">{{ $t('scan.noSymptomsInfo') }}</p>
+                        <div v-else class="text-center py-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                          </svg>
+                          <p class="text-gray-500 mb-4 text-sm">{{ $t('scan.noSymptomsInfo') }}</p>
                           <button
                             @click="openRequestInfoModal"
                             class="px-4 py-2 bg-[#606c38] hover:bg-[#c9d4a3]/100 text-white hover:text-[#606c38] rounded-xl text-sm font-medium transition-colors inline-flex items-center"
@@ -443,17 +449,22 @@
                           </button>
                         </div>
 
-                        <!-- Affected Crops section remains the same -->
-                        <div v-if="diseaseDetails && diseaseDetails.affectedCrops && diseaseDetails.affectedCrops.length > 0" class="mt-4 pt-4 border-t border-gray-600">
-                          <h6 class="font-medium mb-2 text-sm text-[#606c38]">{{ $t('scan.affectedParts') }}</h6>
-                          <div class="flex flex-wrap gap-2">
-                            <span
+                        <!-- Affected Parts section -->
+                        <div v-if="diseaseDetails && diseaseDetails.affectedCrops && diseaseDetails.affectedCrops.length > 0" class="mt-6 pt-4 border-t border-gray-200">
+                          <h6 class="font-semibold mb-3 text-[#606c38] text-base flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#606c38]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Affected Parts
+                          </h6>
+                          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div
                               v-for="(crop, index) in diseaseDetails.affectedCrops"
                               :key="index"
-                              class="px-2 py-1 text-xs bg-[#c9d4a3] text-[#606c38] rounded-full"
+                              class="bg-gradient-to-r from-[#c9d4a3]/20 to-[#c9d4a3]/10 border border-[#c9d4a3]/30 rounded-lg px-3 py-2 text-center"
                             >
-                              {{ crop }}
-                            </span>
+                              <span class="text-sm font-medium text-[#606c38]">{{ crop }}</span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -463,11 +474,14 @@
                         <h5 class="font-semibold mb-2 text-[#606c38] text-lg">{{ $t('scan.preventionTips') }}</h5>
 
                         <div v-if="diseaseDetails && diseaseDetails.prevention" class="mb-4">
-                          <div v-html="diseaseDetails.prevention" class="text-xs text-gray-600"></div>
+                          <div v-html="diseaseDetails.prevention" class="prose prose-sm max-w-none text-gray-700 leading-relaxed"></div>
                         </div>
 
-                        <div v-else class="text-center py-6">
-                          <p class="text-gray-500 mb-4">{{ $t('scan.noPreventionInfo') }}</p>
+                        <div v-else class="text-center py-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                          </svg>
+                          <p class="text-gray-500 mb-4 text-sm">{{ $t('scan.noPreventionInfo') }}</p>
                           <button
                             @click="openRequestInfoModal"
                             class="px-4 py-2 bg-[#606c38] hover:bg-[#c9d4a3]/100 text-white hover:text-[#606c38] rounded-xl text-sm font-medium transition-colors inline-flex items-center"
@@ -481,18 +495,31 @@
                       <div v-if="activeTab === 'info'" class="space-y-4">
                         <h5 class="font-semibold mb-2 text-[#606c38] text-lg">{{ $t('scan.additionalInformation') }}</h5>
 
-                        <div v-if="diseaseDetails && diseaseDetails.causes" class="mb-4">
-                          <h6 class="font-medium text-sm mb-1">{{ $t('scan.causes') }}</h6>
-                          <div v-html="diseaseDetails.causes" class="text-xs text-gray-600"></div>
+                        <div v-if="diseaseDetails && diseaseDetails.causes" class="mb-6">
+                          <h6 class="font-semibold text-base mb-3 text-[#606c38] flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-[#606c38]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {{ $t('scan.causes') }}
+                          </h6>
+                          <div v-html="diseaseDetails.causes" class="prose prose-sm max-w-none text-gray-700 leading-relaxed"></div>
                         </div>
 
-                      <div v-if="diseaseDetails && diseaseDetails.additionalInfo" class="mb-4">
-                          <h6 class="font-semibold text-sm mb-1 text-[#606c38]">{{ $t('scan.additionalDetails') }}</h6>
-                          <div v-html="diseaseDetails.additionalInfo" class="text-xs text-gray-600"></div>
+                      <div v-if="diseaseDetails && diseaseDetails.additionalInfo" class="mb-6">
+                          <h6 class="font-semibold text-base mb-3 text-[#606c38] flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-[#606c38]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            {{ $t('scan.additionalDetails') }}
+                          </h6>
+                          <div v-html="diseaseDetails.additionalInfo" class="prose prose-sm max-w-none text-gray-700 leading-relaxed"></div>
                         </div>
 
-                        <div v-if="(!diseaseDetails || (!diseaseDetails.causes && !diseaseDetails.additionalInfo))" class="text-center py-6">
-                          <p class="text-gray-400 mb-4">{{ $t('scan.noAdditionalInfo') }}</p>
+                        <div v-if="(!diseaseDetails || (!diseaseDetails.causes && !diseaseDetails.additionalInfo))" class="text-center py-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <p class="text-gray-500 mb-4 text-sm">{{ $t('scan.noAdditionalInfo') }}</p>
                           <button
                             @click="openRequestInfoModal"
                             class="px-4 py-2 bg-[#606c38] hover:bg-[#c9d4a3]/100 text-white hover:text-[#606c38] rounded-xl text-sm font-medium transition-colors inline-flex items-center"
