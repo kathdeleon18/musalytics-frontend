@@ -41,19 +41,7 @@
           </div>
         </div>
 
-        <!-- Connection Status Alert -->
-        <div v-if="!isWebSocketConnected && !isLoading && !error" class="mb-4 bg-yellow-500/20 border border-yellow-500/50 text-yellow-400 p-3 rounded-md flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-          </svg>
-          <span>{{ $t('scan.notConnected') }}</span>
-          <button
-            @click="reconnectWebSocket"
-            class="ml-auto px-3 py-1 bg-yellow-500/30 hover:bg-yellow-500/50 rounded-md text-xs transition-colors"
-          >
-            {{ $t('scan.reconnect') }}
-          </button>
-        </div>
+        <!-- WebSocket connection status removed - now using HTTP-based analysis -->
 
         <!-- Main Content -->
         <div v-else class="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -308,7 +296,7 @@
                   <button
                     @click="startAnalysis"
                     class="px-4 py-2 bg-[#606c38] hover:bg-[#c9d4a3]/100 text-white hover:text-[#606c38] rounded-xl text-sm font-medium transition-colors flex items-center"
-                    :disabled="!isWebSocketConnected"
+                    :disabled="isAnalyzing"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -653,30 +641,7 @@
     </div>
 
     <!-- WebSocket Connection Status Indicator -->
-    <div class="fixed bottom-4 right-4 z-50">
-      <div
-        class="flex items-center space-x-2 px-3 py-2 rounded-full shadow-lg transition-all duration-300"
-        :class="isWebSocketConnected ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'"
-      >
-        <div
-          class="h-2.5 w-2.5 rounded-full animate-pulse"
-          :class="isWebSocketConnected ? 'bg-emerald-400' : 'bg-red-400'"
-        ></div>
-        <span class="text-xs font-medium">
-          {{ isWebSocketConnected ? t('scan.connected') : t('scan.disconnected') }}
-        </span>
-        <button
-          v-if="!isWebSocketConnected"
-          @click="reconnectWebSocket"
-          class="ml-1 p-1 hover:bg-gray-700/50 rounded-full"
-          title="Reconnect"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-        </button>
-      </div>
-    </div>
+    <!-- WebSocket connection status indicator removed - now using HTTP-based analysis -->
 
     <div v-if="showRequestModal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
         <div class="bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6 relative">
@@ -761,7 +726,7 @@ import UserSidebar from '../../components/user/UserSidebar.vue';
 import SignOutConfirmation from '../../components/user/SignOutConfirmation.vue';
 import SkeletonLoader from '../../components/SkeletonLoader.vue';
 // NotificationPanel import is no longer needed here
-import { initializeWebSocket, addListener, removeListener, getConnectionStatus, sendMessage } from '../../services/websocketService';
+// WebSocket imports removed - now using HTTP-based analysis
 import { uploadImage, requestImageAnalysis, saveAnalysisToReports, getRecentScans, saveScanToFirestore } from '../../services/imageService';
 import { fetchCurrentAndForecastWeatherData, getWeatherDescription } from '../../services/weatherService.js';
 
@@ -773,7 +738,7 @@ const { t, te } = useI18n();
 const isLoading = ref(false);
 const error = ref(null);
 const showSignOutConfirmation = ref(false);
-const isWebSocketConnected = ref(false);
+// WebSocket connection status removed - now using HTTP-based analysis
 const isSaving = ref(false);
 const scanSaved = ref(false); // Track if the scan has been saved to prevent duplicates
 const diseaseDetails = ref(null);
@@ -1083,11 +1048,6 @@ const startAnalysis = async () => {
     return;
   }
 
-  if (!isWebSocketConnected.value) {
-    error.value = "Not connected to analysis server. Please try again later.";
-    return;
-  }
-
   try {
     isAnalyzing.value = true;
     analysisProgress.value = 0;
@@ -1097,6 +1057,7 @@ const startAnalysis = async () => {
 
     const file = selectedFiles.value[0];
 
+    // Upload image first
     const uploadResponse = await uploadImage(file, {
       userId: auth.currentUser.uid,
       deviceType: 'web',
@@ -1105,25 +1066,73 @@ const startAnalysis = async () => {
 
     console.log("Image uploaded successfully:", uploadResponse);
 
-    const imageId = uploadResponse.imageId;
-    currentAnalysisId.value = uploadResponse.analysisId || imageId;
+    const imageUrl = uploadResponse.firebaseUrl;
+    currentAnalysisId.value = uploadResponse.analysisId || uploadResponse.imageId;
 
-    const requestSent = requestImageAnalysis(imageId, {
+    // Start progress simulation
+    startProgressSimulation();
+
+    // Request analysis via HTTP
+    const analysisResult = await requestImageAnalysis(imageUrl, {
       modelType: 'banana_disease',
       priority: 'normal'
     });
 
-    if (!requestSent) {
-      throw new Error("Failed to send analysis request. Please try again.");
-    }
+    console.log("Analysis completed:", analysisResult);
 
-    startProgressSimulation();
+    // Stop progress simulation
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
+    analysisProgress.value = 100;
+
+    // Handle analysis results
+    if (analysisResult.success && analysisResult.results) {
+      const detection = analysisResult.results.detections[0];
+      
+      diseaseDetails.value = {
+        name: detection.label,
+        scientificName: detection.scientificName,
+        confidence: Math.round(detection.confidence * 100),
+        severity: detection.severity,
+        description: detection.description,
+        treatments: detection.treatments,
+        boundingBox: detection.boundingBox
+      };
+
+      // Save to reports
+      await saveAnalysisToReports(analysisResult.analysisId, {
+        analysisId: analysisResult.analysisId,
+        userId: auth.currentUser.uid,
+        imageUrl: imageUrl,
+        disease: detection.label,
+        confidence: Math.round(detection.confidence * 100),
+        severity: detection.severity,
+        description: detection.description,
+        treatments: detection.treatments,
+        timestamp: analysisResult.results.timestamp,
+        deviceType: 'web',
+        captureMethod: captureMode.value
+      });
+
+      scanSaved.value = true;
+    } else {
+      throw new Error("Analysis failed or returned invalid results");
+    }
 
   } catch (err) {
     console.error("Error starting analysis:", err);
     error.value = err.message || "Failed to start analysis. Please try again.";
-    isAnalyzing.value = false;
+    
+    // Stop progress simulation on error
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
     analysisProgress.value = 0;
+  } finally {
+    isAnalyzing.value = false;
   }
 };
 
@@ -1536,22 +1545,10 @@ const retryPermission = () => {
   startCamera();
 };
 
-const setupWebSocket = () => {
-  initializeWebSocket();
-  isWebSocketConnected.value = getConnectionStatus();
-  addListener('analysis_results', handleAnalysisResults);
-  addListener('analysis_progress', (data) => {
-    if (data.progress) analysisProgress.value = data.progress;
-  });
-};
-
-const reconnectWebSocket = () => {
-  initializeWebSocket();
-};
-
-watch(getConnectionStatus, (connected) => {
-  isWebSocketConnected.value = connected;
-});
+// WebSocket functions removed - now using HTTP-based analysis
+// const setupWebSocket = () => { ... }
+// const reconnectWebSocket = () => { ... }
+// watch(getConnectionStatus, (connected) => { ... })
 
 const getConfidenceClass = (confidence) => {
   if (confidence >= 90) return 'bg-emerald-500/20 text-emerald-400';
@@ -1617,10 +1614,7 @@ const connectionCheckInterval = ref(null);
 
 onMounted(() => {
   fetchUserData();
-  setupWebSocket();
-  connectionCheckInterval.value = setInterval(() => {
-    isWebSocketConnected.value = getConnectionStatus();
-  }, 5000);
+  // WebSocket setup removed - now using HTTP-based analysis
 });
 
 onBeforeUnmount(() => {
@@ -1629,7 +1623,7 @@ onBeforeUnmount(() => {
   if (connectionCheckInterval.value) clearInterval(connectionCheckInterval.value);
   if (weatherPollingInterval) clearInterval(weatherPollingInterval);
   if (unsubscribeScans.value) unsubscribeScans.value();
-  removeListener('analysis_results', handleAnalysisResults);
+  // WebSocket cleanup removed - now using HTTP-based analysis
 });
 
 </script>

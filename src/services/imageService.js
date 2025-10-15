@@ -78,16 +78,33 @@ export async function uploadImage(imageFile, metadata = {}) {
 }
 
 /**
- * Request analysis of an uploaded image via WebSocket
- * @param {string} imageId - The ID of the uploaded image
+ * Request analysis of an uploaded image via HTTP
+ * @param {string} imageUrl - The URL of the uploaded image
  * @param {Object} options - Analysis options
- * @returns {boolean} - Whether the request was sent successfully
+ * @returns {Promise<Object>} - The analysis results
  */
-export function requestImageAnalysis(imageId, options = {}) {
-  return sendMessage("analyze_image", {
-    imageId,
-    options,
-  })
+export async function requestImageAnalysis(imageUrl, options = {}) {
+  try {
+    // Get current user
+    const auth = getAuth()
+    const user = auth.currentUser
+    if (!user) {
+      throw new Error("User not authenticated")
+    }
+
+    console.log("Starting HTTP-based analysis for image:", imageUrl)
+
+    const response = await axios.post(`${API_URL}/analysis/analyze`, {
+      imageUrl,
+      userId: user.uid,
+      ...options
+    })
+
+    return response.data
+  } catch (error) {
+    console.error("Error in HTTP analysis request:", error)
+    throw error
+  }
 }
 
 /**
