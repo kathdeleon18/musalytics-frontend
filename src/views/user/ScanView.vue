@@ -1087,19 +1087,31 @@ const startAnalysis = async () => {
     }
     analysisProgress.value = 100;
 
-    // Handle analysis results
-    if (analysisResult.success && analysisResult.results) {
-      const detection = analysisResult.results.detections[0];
-      
-      diseaseDetails.value = {
-        name: detection.label,
-        scientificName: detection.scientificName,
-        confidence: Math.round(detection.confidence * 100),
-        severity: detection.severity,
-        description: detection.description,
-        treatments: detection.treatments,
-        boundingBox: detection.boundingBox
-      };
+      // Handle analysis results
+      if (analysisResult.success && analysisResult.results) {
+        const detection = analysisResult.results.detections[0];
+        
+        diseaseDetails.value = {
+          name: detection.label,
+          scientificName: detection.scientificName,
+          confidence: Math.round(detection.confidence * 100),
+          severity: detection.severity,
+          description: detection.description,
+          treatments: detection.treatments,
+          boundingBox: detection.boundingBox
+        };
+
+        // Set analysisResult.value for scan history (this was missing!)
+        analysisResult.value = {
+          imageUrl: imageUrl,
+          disease: detection.label,
+          confidence: Math.round(detection.confidence * 100),
+          severity: detection.severity,
+          description: detection.description,
+          treatments: detection.treatments,
+          analysisId: analysisResult.analysisId,
+          timestamp: analysisResult.results.timestamp
+        };
 
       // Save to reports
       await saveAnalysisToReports(analysisResult.analysisId, {
@@ -1117,13 +1129,20 @@ const startAnalysis = async () => {
       });
 
       // Save to backend database for recent scans (this was missing!)
-      await saveAnalysisToBackend(analysisResult.analysisId, {
-        analysisId: analysisResult.analysisId,
-        imageId: uploadResponse.imageId,
-        userId: auth.currentUser.uid,
-        detection: detection,
-        timestamp: analysisResult.results.timestamp
-      });
+      console.log("Saving analysis to backend database...");
+      try {
+        await saveAnalysisToBackend(analysisResult.analysisId, {
+          analysisId: analysisResult.analysisId,
+          imageId: uploadResponse.imageId,
+          userId: auth.currentUser.uid,
+          detection: detection,
+          timestamp: analysisResult.results.timestamp
+        });
+        console.log("Analysis successfully saved to backend database");
+      } catch (backendError) {
+        console.error("Error saving to backend database:", backendError);
+        // Don't throw - we still want to save to reports even if backend fails
+      }
 
       scanSaved.value = true;
     } else {
