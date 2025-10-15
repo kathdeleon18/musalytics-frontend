@@ -1389,7 +1389,14 @@ const fetchDiseaseDetails = async (diseaseName) => {
 
     console.log("Fetching disease details for:", diseaseName);
 
-    const normalizeForComparison = (name) => name.toLowerCase().replace(/[_\-.\s]/g, '').replace(/s\b/g, '');
+    const normalizeForComparison = (name) => {
+      return name.toLowerCase()
+        .replace(/[_\-.\s]/g, '')  // Remove underscores, hyphens, dots, spaces
+        .replace(/s\b/g, '')       // Remove trailing 's'
+        .replace(/disease/g, '')   // Remove 'disease' word
+        .replace(/banana/g, '')    // Remove 'banana' word
+        .trim();
+    };
     const normalizedDiseaseName = normalizeForComparison(diseaseName);
 
     console.log("Normalized disease name:", normalizedDiseaseName);
@@ -1412,6 +1419,12 @@ const fetchDiseaseDetails = async (diseaseName) => {
         score = 100;
       } else if (normalizedDocName.includes(normalizedDiseaseName) || normalizedDiseaseName.includes(normalizedDocName)) {
         score = 80;
+      } else if (normalizedDocName.includes('sigatoka') && normalizedDiseaseName.includes('sigatoka')) {
+        score = 70; // Special case for sigatoka diseases
+      } else if (normalizedDocName.includes('panama') && normalizedDiseaseName.includes('panama')) {
+        score = 70; // Special case for panama disease
+      } else if (normalizedDocName.includes('moko') && normalizedDiseaseName.includes('moko')) {
+        score = 70; // Special case for moko disease
       }
 
       console.log(`Comparing "${docDiseaseName}" (${normalizedDocName}) with "${diseaseName}" (${normalizedDiseaseName}) - Score: ${score}`);
@@ -1425,7 +1438,7 @@ const fetchDiseaseDetails = async (diseaseName) => {
     console.log(`Best match score: ${bestMatchScore}`);
     console.log("Matched disease:", matchedDisease);
 
-    diseaseDetails.value = bestMatchScore >= 80 ? matchedDisease : null;
+    diseaseDetails.value = bestMatchScore >= 70 ? matchedDisease : null;
 
     if (!diseaseDetails.value) {
       console.log("No disease details found - this is why tabs are empty");
