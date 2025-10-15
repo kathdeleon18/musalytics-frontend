@@ -1073,12 +1073,12 @@ const startAnalysis = async () => {
     startProgressSimulation();
 
     // Request analysis via HTTP
-    const analysisResult = await requestImageAnalysis(imageUrl, {
+    const analysisResponse = await requestImageAnalysis(imageUrl, {
       modelType: 'banana_disease',
       priority: 'normal'
     });
 
-    console.log("Analysis completed:", analysisResult);
+    console.log("Analysis completed:", analysisResponse);
 
     // Stop progress simulation
     if (progressInterval) {
@@ -1088,8 +1088,8 @@ const startAnalysis = async () => {
     analysisProgress.value = 100;
 
       // Handle analysis results
-      if (analysisResult.success && analysisResult.results) {
-        const detection = analysisResult.results.detections[0];
+      if (analysisResponse.success && analysisResponse.results) {
+        const detection = analysisResponse.results.detections[0];
         
         diseaseDetails.value = {
           name: detection.label,
@@ -1109,13 +1109,13 @@ const startAnalysis = async () => {
           severity: detection.severity,
           description: detection.description,
           treatments: detection.treatments,
-          analysisId: analysisResult.analysisId,
-          timestamp: analysisResult.results.timestamp
+          analysisId: analysisResponse.analysisId,
+          timestamp: analysisResponse.results.timestamp
         };
 
       // Save to reports
-      await saveAnalysisToReports(analysisResult.analysisId, {
-        analysisId: analysisResult.analysisId,
+      await saveAnalysisToReports(analysisResponse.analysisId, {
+        analysisId: analysisResponse.analysisId,
         userId: auth.currentUser.uid,
         imageUrl: imageUrl,
         disease: detection.label,
@@ -1123,7 +1123,7 @@ const startAnalysis = async () => {
         severity: detection.severity,
         description: detection.description,
         treatments: detection.treatments,
-        timestamp: analysisResult.results.timestamp,
+        timestamp: analysisResponse.results.timestamp,
         deviceType: 'web',
         captureMethod: captureMode.value
       });
@@ -1131,12 +1131,12 @@ const startAnalysis = async () => {
       // Save to backend database for recent scans (this was missing!)
       console.log("Saving analysis to backend database...");
       try {
-        await saveAnalysisToBackend(analysisResult.analysisId, {
-          analysisId: analysisResult.analysisId,
+        await saveAnalysisToBackend(analysisResponse.analysisId, {
+          analysisId: analysisResponse.analysisId,
           imageId: uploadResponse.imageId,
           userId: auth.currentUser.uid,
           detection: detection,
-          timestamp: analysisResult.results.timestamp
+          timestamp: analysisResponse.results.timestamp
         });
         console.log("Analysis successfully saved to backend database");
       } catch (backendError) {
